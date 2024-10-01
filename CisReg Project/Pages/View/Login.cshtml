@@ -1,0 +1,112 @@
+﻿@page "/"
+@model CisReg_Project.Pages.Controller.HomeModel
+@{
+    ViewData["Title"] = "Home"; 
+    Layout = "Layout/MainLayout"; 
+}
+
+<style>
+    input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 15px;
+        height: 15px;
+        border: 2px solid #7B7B7B;
+        border-radius: 4px;
+        cursor: pointer;
+        outline: none;
+        background-color: white;
+        position: relative;
+    }
+
+    input[type="checkbox"]:checked {
+        background-color: #4CAF50;
+        border-color: #4CAF50;
+    }
+
+    input[type="checkbox"]:checked::after {
+        content: "";
+        position: absolute;
+        left: 3.5px;
+        top: 0px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+</style>
+
+<!-- Container flexível para centralização -->
+<div class="relative min-h-screen flex items-center justify-center p-4 bg-customGrey-light">
+    <!-- Primeiro círculo -->
+    <div class="w-61 h-61 bg-green-gradient rounded-full aspect-circle fixed left-133 top-323"></div>
+
+    <!-- Logo da UNP
+    <div class="relative flex right-133 z-10">
+        <img src="/unp-logo.png">
+    </div>
+    -->
+    <!-- Segundo círculo -->
+    <div class="w-61 h-61 bg-green-gradient rounded-full aspect-circle fixed left-267 top-294"></div>
+
+    <!-- Formulário de Login -->
+    <div class="w-394 h-474 rounded-lg bg-customGrey-light shadow-login absolute custom-lg:right-170 custom-lg:top-1/2 custom-lg:transform custom-lg:-translate-y-1/2 custom-lg:left-auto custom-lg:bottom-auto custom-lg:translate-x-0">
+        <form class="login-form p-4">
+            <div class="mb-4">
+                <h3 class="w-5 text-customGreen-light text-center font-poppins font-bold text-4x1 leading-normal absolute left-152 top-26">Login</h3>
+            </div>
+
+            <!-- Campo de E-mail -->
+            <div class="relative mt-24 mb-3">
+                <label for="email" class="w-53 h-22 text-customGreen-dark text-center font-poppins font-normal text-base leading-personalized mb-2 block">E-mail</label>
+                <div class="relative w-full">
+                    <i class="fa-solid fa-envelope absolute left-4 top-1/2 transform -translate-y-1/2 text-customGrey-default"></i>
+                    <input type="email" id="email" name="email" class="input input-accent pl-10 w-full bg-white text-customGrey-default font-poppins font-normal text-base leading-4" placeholder="Digite seu e-mail" />
+                </div>
+            </div>
+
+            <!-- Campo de Senha -->
+            <div class="relative">
+                <label for="password" class="w-53 h-22 text-customGreen-dark text-center font-poppins font-normal text-base leading-personalized mb-2 block">Senha</label>
+                <div class="relative w-full">
+                    <i class="fa-solid fa-lock absolute left-4 top-1/2 transform -translate-y-1/2 text-customGrey-default"></i>
+                    <input type="password" id="password" name="password" class="input input-accent pl-10 pr-12 w-full bg-white text-customGrey-default font-poppins font-normal text-base leading-4" placeholder="Digite sua senha" />
+                    <button type="button" onclick="togglePasswordVisibility()" class="absolute right-4 top-1/2 transform -translate-y-1/2">
+                        <i class="fa-solid fa-eye text-customGrey-default" id="toggle-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contêiner para o checkbox e link -->
+            <div class="relative flex justify-between items-center mt-3">
+                <label for="myCheckbox" class="flex items-center text-customGrey-default font-poppins font-normal text-sm leading-personalized">
+                    <input type="checkbox" id="myCheckbox" class="mr-2 ml-2" />
+                    Permanecer logado
+                </label>
+                <a href="/forgot-password" class="mr-2 text-customGreen-dark font-poppins font-normal text-sm leading-personalized underline">Esqueceu a Senha?</a>
+            </div>
+
+            <!-- Botão para efetuar o login -->
+            <div class="relative mt-6">
+                <button type="submit" class="w-full h-entrar-height rounded-lg bg-customGreen-default text-customGrey-light text-center font-poppins font-normal text-base leading-personalized">Entrar</button>
+            </div>
+
+            <!-- (Design apenas) Novo por aqui? -->
+            <div class="flex items-center justify-center mt-2">
+                <div class="border-t border-customGrey-default flex-grow"></div>
+                <span class="mx-4 text-customGrey-default font-popins font-normal text-sm">Novo por aqui?</span>
+                <div class="border-t border-customGrey-default flex-grow"></div>
+            </div>
+
+            <!-- Botão que leva a tela de cadastro -->
+            <div class="relative mt-2">
+                <button type="submit" class="w-full h-entrar-height rounded-lg bg-customGreen-light text-customGrey-light text-center font-poppins font-normal text-base leading-personalized">Cadastre-se</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+<script src="~/js/login.js"></script>
