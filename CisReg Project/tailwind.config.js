@@ -32,38 +32,34 @@ module.exports = {
             },
 
             width: {
-                '8': '12rem',
 
                 // Circulos
-                '61': '61rem',
-                '125': '125rem',
+                '61-rem': '61rem',
+                '125-rem': '125rem',
 
                 // Formulario de Login
-                '394': '394px',
+                '394-px': '394px',
 
                 // Titulo do login
-                '5': '5.5rem',
+                '5-rem': '5.5rem',
 
                 // Campos E-mail & Senha 
-                '53': '53px',
-                '22': '22px',
-
-                // Botao "Entrar"
-                'entrar-width': '352px',
+                '53-px': '53px',
+                '22-px': '22px',
 
             },
 
             height: {
 
                 // Circulos
-                '61': '61rem',
-                '125': '125rem',
+                '61-rem': '61rem',
+                '125-rem': '125rem',
 
-                // Formulirio de Login
-                '474': '474px',
+                // Formulário de Login
+                '474-px': '474px',
 
                 // Botao "Entrar"
-                'entrar-height': '40px',
+                'entrar-height-px': '40px',
             },
 
             backgroundImage: {
@@ -74,7 +70,7 @@ module.exports = {
 
             borderRadius: {
                 // Formulario de Login
-                'lg': '0.5rem',
+                'lg-border': '0.5rem',
 
                 // Circulos
                 'full': '9999px',
@@ -83,26 +79,23 @@ module.exports = {
             // Posicionamento dos elementos na tela
             inset: {
                 // Primeiro Circulo
-                '597': '597px',
-                '133': '-133px',
-                '323': '-323px',
-                '456': '456px',
+                'minus-133-px': '-133px',
+                'minus-323-px': '-323px',
 
                 // Segundo Circulo
-                '731': '731px',
-                '267': '-267px',
-                '294': '294px',
-                '161': '-161px',
+                'minus-267-px': '-267px',
+                '294-px': '294px',
+
 
                 // Formulario de Login
-                '170': '170px',
+                '170-px': '170px',
 
                 // Titulo do Login
-                '152': '152px',
-                '26': '26px',
+                '152-px': '152px',
+                '26-px': '26px',
 
                 // UNP Logo
-                '130': '150px',
+                '150-px': '150px',
                 
 
 
