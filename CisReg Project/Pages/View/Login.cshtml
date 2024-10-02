@@ -1,7 +1,7 @@
 ﻿@page "/"
 @model CisReg_Project.Pages.Controller.HomeModel
 @{
-    ViewData["Title"] = "Home"; 
+    ViewData["Title"] = "Login"; 
     Layout = "Layout/MainLayout"; 
 }
 
@@ -39,16 +39,18 @@
 
 <!-- Container flexível para centralização -->
 <div class="relative min-h-screen flex items-center justify-center p-4 bg-customGrey-light">
-    <!-- Primeiro círculo -->
-    <div class="w-61 h-61 bg-green-gradient rounded-full aspect-circle fixed left-133 top-323"></div>
 
-    <!-- Logo da UNP
-    <div class="relative flex right-133 z-10">
-        <img src="/unp-logo.png">
+    <!-- Primeiro círculo -->
+    <div class="custom-lg:w-61 custom-lg:h-61 custom-lg:left-133 w-125 h-125 bg-green-gradient rounded-full aspect-circle fixed left-100 top-323"></div>
+
+
+    <!-- UNP Logo -->
+    <div class="custom-lg:z-10 custom-lg:left-130 custom-lg:top-1/2 custom-lg:transform custom-lg:-translate-y-1/2 custom-lg:bottom-auto custom-lg:right-auto absolute">
+        <img src="lib/images/logo-unp.svg" class="scale-200"/>
     </div>
-    -->
+
     <!-- Segundo círculo -->
-    <div class="w-61 h-61 bg-green-gradient rounded-full aspect-circle fixed left-267 top-294"></div>
+    <div class="custom-lg:w-61 custom-lg:h-61 custom-lg:left-267 w-125 h-125 bg-green-gradient rounded-full aspect-circle fixed left-234 top-294"></div>
 
     <!-- Formulário de Login -->
     <div class="w-394 h-474 rounded-lg bg-customGrey-light shadow-login absolute custom-lg:right-170 custom-lg:top-1/2 custom-lg:transform custom-lg:-translate-y-1/2 custom-lg:left-auto custom-lg:bottom-auto custom-lg:translate-x-0">

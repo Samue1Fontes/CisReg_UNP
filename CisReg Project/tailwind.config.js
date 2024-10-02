@@ -32,8 +32,11 @@ module.exports = {
             },
 
             width: {
+                '8': '12rem',
+
                 // Circulos
                 '61': '61rem',
+                '125': '125rem',
 
                 // Formulario de Login
                 '394': '394px',
@@ -51,8 +54,10 @@ module.exports = {
             },
 
             height: {
+
                 // Circulos
                 '61': '61rem',
+                '125': '125rem',
 
                 // Formulirio de Login
                 '474': '474px',
@@ -96,7 +101,20 @@ module.exports = {
                 '152': '152px',
                 '26': '26px',
 
+                // UNP Logo
+                '130': '150px',
+                
 
+
+
+            },
+
+            scale: {
+                '90': '0.9',
+                '110': '1.1',
+                '125': '1.25',
+                '150': '1.5',
+                '200': '2.0',
             },
 
             boxShadow: {
@@ -171,6 +189,7 @@ module.exports = {
 
             zIndex: {
                 'z-10': '10',
+                'z-20': '20',
             },
         },
     },

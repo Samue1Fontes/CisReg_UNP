@@ -1162,24 +1162,12 @@ html {
   position: relative;
 }
 
-.left-133 {
-  left: -133px;
-}
-
 .left-152 {
   left: 152px;
 }
 
-.left-267 {
-  left: -267px;
-}
-
 .left-4 {
   left: 1rem;
-}
-
-.right-133 {
-  right: -133px;
 }
 
 .right-4 {
@@ -1200,10 +1188,6 @@ html {
 
 .top-323 {
   top: -323px;
-}
-
-.z-10 {
-  z-index: 10;
 }
 
 .mx-4 {
@@ -1259,12 +1243,12 @@ html {
   aspect-ratio: 1 / 1;
 }
 
-.h-474 {
-  height: 474px;
+.h-125 {
+  height: 125rem;
 }
 
-.h-61 {
-  height: 61rem;
+.h-474 {
+  height: 474px;
 }
 
 .h-entrar-height {
@@ -1273,6 +1257,10 @@ html {
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+.w-125 {
+  width: 125rem;
 }
 
 .w-394 {
@@ -1287,10 +1275,6 @@ html {
   width: 53px;
 }
 
-.w-61 {
-  width: 61rem;
-}
-
 .w-full {
   width: 100%;
 }
@@ -1301,6 +1285,12 @@ html {
 
 .-translate-y-1\/2 {
   --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-200 {
+  --tw-scale-x: 2.0;
+  --tw-scale-y: 2.0;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1359,16 +1349,6 @@ html {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-customGrey-default {
-  --tw-bg-opacity: 1;
-  background-color: rgb(130 130 130 / var(--tw-bg-opacity));
-}
-
-.bg-customGrey-dark {
-  --tw-bg-opacity: 1;
-  background-color: rgb(79 79 79 / var(--tw-bg-opacity));
 }
 
 .bg-green-gradient {
@@ -1466,6 +1446,18 @@ html {
     bottom: auto;
   }
 
+  .custom-lg\:left-130 {
+    left: 150px;
+  }
+
+  .custom-lg\:left-133 {
+    left: -133px;
+  }
+
+  .custom-lg\:left-267 {
+    left: -267px;
+  }
+
   .custom-lg\:left-auto {
     left: auto;
   }
@@ -1474,8 +1466,24 @@ html {
     right: 170px;
   }
 
+  .custom-lg\:right-auto {
+    right: auto;
+  }
+
   .custom-lg\:top-1\/2 {
     top: 50%;
+  }
+
+  .custom-lg\:z-10 {
+    z-index: 10;
+  }
+
+  .custom-lg\:h-61 {
+    height: 61rem;
+  }
+
+  .custom-lg\:w-61 {
+    width: 61rem;
   }
 
   .custom-lg\:-translate-y-1\/2 {

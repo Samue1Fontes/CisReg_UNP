@@ -21,7 +21,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\lib\images\unp_logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ContainerPort Include="8081" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\images\" />
   </ItemGroup>
 
 </Project>
