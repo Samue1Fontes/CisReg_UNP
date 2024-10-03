@@ -1,0 +1,6 @@
+﻿
+// View - RegistrationType.cshtml
+
+
+
+
