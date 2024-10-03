@@ -5,6 +5,11 @@ module.exports = {
         './wwwroot/**/*.html',
         './**/*.cshtml'
     ],
+    safelist: [
+        'input-error',
+        'input-accent',
+    ],
+
     theme: {
         extend: {
 
