@@ -8,6 +8,8 @@ module.exports = {
     safelist: [
         'input-error',
         'input-accent',
+        'radio',
+        'radio-sucess',
     ],
 
     theme: {
@@ -52,6 +54,9 @@ module.exports = {
                 '360-px': '360px',
                 '22-px': '22px',
 
+                // Campos de Seleção (Radio)
+                '321-px': '321px',
+
             },
 
             height: {
@@ -69,6 +74,9 @@ module.exports = {
 
                 // Botao "Entrar"
                 'entrar-height-px': '40px',
+
+                // Campos de Seleção (Radio)
+                '44-px': '44px',
 
             },
 
