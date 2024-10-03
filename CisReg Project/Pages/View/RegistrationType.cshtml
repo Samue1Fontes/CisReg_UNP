@@ -5,10 +5,22 @@
     ViewData["Title"] = "Register";
     Layout = "Layout/MainLayout";
 }
-
 <style>
+    .radio {
+        transition: transform 0.15s ease-in-out, box-shadow ease-in-out;
+    }
+    .radio:checked {
+        box-shadow: 0 0 0 4px #FFFFFF inset; 
+        animation: none;
+        transform: scale(1.1);
+    }
+
+    .radio:focus {
+        outline: none; 
+    }
 
 </style>
+
 <!-- Container flexível para centralização -->
 <div class="relative min-h-screen flex items-center justify-center p-4 bg-customGrey-light">
 

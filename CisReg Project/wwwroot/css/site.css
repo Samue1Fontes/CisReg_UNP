@@ -1498,11 +1498,6 @@ html {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-success {
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-su,oklch(var(--su)/var(--tw-bg-opacity)));
-}
-
 .bg-green-gradient {
   background-image: linear-gradient(180deg, #059C7B 0%, #02362B 100%);
 }
@@ -1568,6 +1563,11 @@ html {
   color: rgb(7 67 64 / var(--tw-text-opacity));
 }
 
+.text-customGreen-default {
+  --tw-text-opacity: 1;
+  color: rgb(5 156 123 / var(--tw-text-opacity));
+}
+
 .text-customGreen-light {
   --tw-text-opacity: 1;
   color: rgb(87 190 147 / var(--tw-text-opacity));
@@ -1583,11 +1583,6 @@ html {
   color: rgb(247 247 247 / var(--tw-text-opacity));
 }
 
-.text-customGreen-default {
-  --tw-text-opacity: 1;
-  color: rgb(5 156 123 / var(--tw-text-opacity));
-}
-
 .underline {
   text-decoration-line: underline;
 }
@@ -1596,6 +1591,18 @@ html {
   --tw-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   --tw-shadow-colored: 0px 4px 4px 0px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.outline {
+  outline-style: solid;
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .checked\:bg-success:checked {
