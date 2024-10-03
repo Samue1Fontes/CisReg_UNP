@@ -1,0 +1,94 @@
+﻿@page "/registration-type"
+
+@model CisReg_Project.Pages.Controller.RegistrationTypeModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "Layout/MainLayout";
+}
+
+<style>
+
+</style>
+<!-- Container flexível para centralização -->
+<div class="relative min-h-screen flex items-center justify-center p-4 bg-customGrey-light">
+
+    <!-- Primeiro círculo -->
+    <div class="custom-lg:w-61-rem custom-lg:h-61-rem custom-lg:left-minus-133-px w-125-rem h-125-rem bg-green-gradient rounded-full aspect-circle fixed top-minus-323-px"></div>
+
+
+    <!-- UNP Logo -->
+    <div class="custom-lg:z-10 custom-lg:left-150-px custom-lg:top-1/2 custom-lg:transform custom-lg:-translate-y-1/2 custom-lg:bottom-auto custom-lg:right-auto absolute">
+        <img src="lib/images/logo-unp.svg" class="scale-200" />
+    </div>
+
+    <!-- Segundo círculo -->
+    <div class="custom-lg:w-61-rem custom-lg:h-61-rem custom-lg:left-minus-267-px w-125-rem h-125-rem bg-green-gradient rounded-full aspect-circle fixed top-294-px"></div>
+
+    <!-- Formulário de Cadastro (Tipo de Cadastro) -->
+    <div class="w-394-px h-474-px rounded-lg-border bg-customGrey-light shadow-login absolute flex justify-center custom-lg:right-170-px custom-lg:top-1/2 custom-lg:transform custom-lg:-translate-y-1/2 custom-lg:left-auto custom-lg:bottom-auto custom-lg:translate-x-0">
+        <form method="post" class="registration-type-form p-4">
+
+            <!-- Título "Tipo de Cadastro" -->
+            <div class="mb-12 mt-4">
+                <h3 class="text-customGreen-light text-center font-poppins font-bold text-4x1 leading-normal">Tipo de Cadastro</h3>
+            </div>
+
+            <!-- Opções -->
+            <div class="relative">
+                <!-- Opção Prefeitura -->
+                <div class="w-321-px h-44-px border border-customGreen-default rounded-lg-border p-4 flex items-center mb-8">
+                    <div class="form-control">
+                        <label class="label cursor-pointer">
+                            <input type="radio" 
+                                   asp-for="SelectedRegistrationType" 
+                                   name="SelectedRegistrationType" 
+                                   value="Prefeitura" 
+                                   class="radio radio-sucess checked:bg-success radio-sm mr-2" 
+                                   />
+                            <span class="label-text text-customGreen-default font-poppins text-base leading-normal">Prefeitura</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Opção Usuário -->
+                <div class="w-321-px h-44-px border border-customGreen-default rounded-lg-border p-4 flex items-center mb-8">
+                    <div class="form-control">
+                        <label class="label cursor-pointer">
+                            <input type="radio" 
+                                    asp-for="SelectedRegistrationType" 
+                                    name="SelectedRegistrationType" 
+                                    value="Usuario"
+                                    class="radio radio-sucess checked:bg-success radio-sm mr-2"
+                                   />
+                            <span class="label-text text-customGreen-default font-poppins text-base leading-normal">Usuário</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Opção Profissional de sáude -->
+                <div class="w-321-px h-44-px border border-customGreen-default rounded-lg-border p-4 flex items-center mb-12">
+                    <div class="form-control">
+                        <label class="label cursor-pointer">
+                            <input type="radio" 
+                                   asp-for="SelectedRegistrationType" 
+                                   name="SelectedRegistrationType" 
+                                   value="ProfissionalDeSaude" 
+                                   class="radio radio-sucess checked:bg-success radio-sm mr-2"
+                                   />
+                            <span class="label-text text-customGreen-default font-poppins text-base leading-normal">Profissional de Saúde</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Botão que leva a tela de cadastro (PersonalInfo) -->
+                <div class="relative">
+                    <button type="submit"
+                            class="w-full h-entrar-height-px rounded-lg-border bg-customGreen-default text-customGrey-light text-center font-poppins font-normal text-base leading-personalized">Prosseguir</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="~/js/registration-type.js"></script>
