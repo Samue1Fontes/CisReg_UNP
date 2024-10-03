@@ -17,14 +17,13 @@ function togglePasswordVisibility() {
 }
 
 
-// Função para redirecionar o usuário para a página de registro de Informações Pessoais.
-function redirectToRegisterPersonalInfo() {
-    window.location.href = "/register-personal-info";
+// Função para redirecionar o usuário para a página de registro Tipo de Cadastro.
+function redirectToRegistrationType() {
+    window.location.href = "/registration-type";
 }
 
 // Função para estilizar o campo de E-mail, impedindo a utilização do espaço e deixando-o apenas em letras minúsculas.
 function formatEmailInputAtLogin(email) {
-    console.log("formatEmailInputAtLogin");
     email = email.trim();
 
     email = email.toLowerCase();
@@ -36,13 +35,11 @@ function formatEmailInputAtLogin(email) {
 
 // Função a ser chamada em Personal Info que envia o input atual e faz a transformação.
 function applyEmailFormatAtLogin(input) {
-    console.log("applyEmailFormatAtLogin");
     input.value = formatEmailInputAtLogin(input.value);
 }
 
 // Função que valida o formato do valor de inserção atribuído a este campo.
 function validateFieldInputAtLogin(input) {
-    console.log("validateFieldInputAtLogin");
     input.classList.remove('input-error');
     input.classList.remove('input-accent');
 
