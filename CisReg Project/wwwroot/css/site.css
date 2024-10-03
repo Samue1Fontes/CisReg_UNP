@@ -1200,11 +1200,6 @@ html {
   width: 1.25rem;
 }
 
-[type="checkbox"].checkbox-md {
-  height: 1.5rem;
-  width: 1.5rem;
-}
-
 .fixed {
   position: fixed;
 }
@@ -1229,6 +1224,10 @@ html {
   right: 1rem;
 }
 
+.right-6 {
+  right: 1.5rem;
+}
+
 .top-1\/2 {
   top: 50%;
 }
@@ -1243,14 +1242,6 @@ html {
 
 .top-minus-323-px {
   top: -323px;
-}
-
-.right-6 {
-  right: 1.5rem;
-}
-
-.right-5 {
-  right: 1.25rem;
 }
 
 .mx-4 {
@@ -1274,8 +1265,8 @@ html {
   margin-bottom: 1.5rem;
 }
 
-.ml-2 {
-  margin-left: 0.5rem;
+.ml-1 {
+  margin-left: 0.25rem;
 }
 
 .mr-2 {
@@ -1292,10 +1283,6 @@ html {
 
 .mt-3 {
   margin-top: 0.75rem;
-}
-
-.ml-1 {
-  margin-left: 0.25rem;
 }
 
 .mt-4 {
@@ -1517,10 +1504,6 @@ html {
 
 .underline {
   text-decoration-line: underline;
-}
-
-.accent-white {
-  accent-color: #fff;
 }
 
 .shadow-login {
