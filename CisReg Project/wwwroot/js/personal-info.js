@@ -1,6 +1,23 @@
 ﻿
 // View - PersonalInfo.cshtml
 
+// Função que torna o password digitado visível por meio de uma troca de type (password -> text || text -> password), assim como o ícone. 
+// Levemente modificado, para alterar os respectivos campos segundo o uso: Senha e Confirme a Senha.
+function togglePasswordVisibility(inputId, iconId) {
+    var passwordField = document.getElementById(inputId);
+    var toggleIcon = document.getElementById(iconId);
+
+    if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+        toggleIcon.classList.remove('fa-eye');
+        toggleIcon.classList.add('fa-eye-slash');
+    } else {
+        passwordField.type = 'password';
+        toggleIcon.classList.remove('fa-eye-slash');
+        toggleIcon.classList.add('fa-eye');
+    }
+}
+
 // Função para redirecionar o usuário para a página de registro de Informações Profissionais.
 function redirectToRegisterProfessionalInfo() {
     window.location.href = "/register-professional-info";
@@ -43,33 +60,15 @@ function applyEmailFormat(input) {
     input.value = formatEmailInput(input.value);
 }
 
-// Função que torna o password digitado visível por meio de uma troca de type (password -> text || text -> password), assim como o ícone. 
-// Levemente modificado, para alterar os respectivos campos segundo o uso: Senha e Confirme a Senha.
-function togglePasswordVisibility(inputId, iconId) {
-    var passwordField = document.getElementById(inputId);
-    var toggleIcon = document.getElementById(iconId);
-
-    if (passwordField.type === 'password') {
-        passwordField.type = 'text';
-        toggleIcon.classList.remove('fa-eye');
-        toggleIcon.classList.add('fa-eye-slash');
-    } else {
-        passwordField.type = 'password';
-        toggleIcon.classList.remove('fa-eye-slash');
-        toggleIcon.classList.add('fa-eye');
-    }
-}
-
 // Função que valida o formato do valor de inserção atribuído a este campo.
-function validateName(input) {
-    const pattern = /^[A-Za-z\s]+$/;
+function validateFieldInput(input) {
+    input.classList.remove('input-error');
+    input.classList.remove('input-accent');
 
-
-    if (input.value.trim() === "" || !pattern.test(input.value)) {
-        input.classList.add('input-error'); 
-        input.classList.remove('input-accent');
+    if (!input.checkValidity()) {
+        input.classList.add('input-error');
     } else {
-        input.classList.remove('input-error'); 
-        input.classList.add('input-accent'); 
+        input.classList.add('input-accent');
     }
 }
+

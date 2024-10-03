@@ -1,9 +1,10 @@
 ﻿@page "/"
+
 @model CisReg_Project.Pages.Controller.HomeModel
 @{
     ViewData["Title"] = "Login"; 
     Layout = "Layout/MainLayout"; 
-    }
+}
 
 <!-- Container flexível para centralização -->
 <div class="relative min-h-screen flex items-center justify-center p-4 bg-customGrey-light">
@@ -34,7 +35,14 @@
                 <label for="email" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block">E-mail</label>
                 <div class="relative w-full">
                     <i class="fa-solid fa-envelope absolute left-4 top-1/2 transform -translate-y-1/2 text-customGrey-default"></i>
-                    <input type="email" id="email" name="email" class="input input-accent pl-10 w-full bg-white text-customGrey-default font-poppins font-normal text-base leading-4" placeholder="Digite seu e-mail" required/>
+                    <input type="email" 
+                           id="email" 
+                           name="email" 
+                           class="input input-accent pl-10 w-full bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
+                           placeholder="Digite seu e-mail"
+                           pattern="^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                           oninput="applyEmailFormatAtLogin(this); validateFieldInputAtLogin(this)"
+                           required/>
                 </div>
             </div>
 
@@ -43,8 +51,17 @@
                 <label for="password" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block">Senha</label>
                 <div class="relative w-full">
                     <i class="fa-solid fa-lock absolute left-4 top-1/2 transform -translate-y-1/2 text-customGrey-default"></i>
-                    <input type="password" id="password" name="password" class="input input-accent pl-10 pr-12 w-full bg-white text-customGrey-default font-poppins font-normal text-base leading-4" placeholder="Digite sua senha" required/>
-                    <button type="button" onclick="togglePasswordVisibility()" class="absolute right-4 top-1/2 transform -translate-y-1/2">
+                    <input type="password" 
+                           id="password" 
+                           name="password" 
+                           class="input input-accent pl-10 pr-12 w-full bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
+                           placeholder="Digite sua senha"
+                           pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[@@$!%*?&])[A-Za-z\d@@$!%*?&]{8,}"
+                           oninput="validateFieldInputAtLogin(this)"
+                           required/>
+                    <button type="button" 
+                            onclick="togglePasswordVisibility()" 
+                            class="absolute right-4 top-1/2 transform -translate-y-1/2">
                         <i class="fa-solid fa-eye text-customGrey-default" id="toggle-icon"></i>
                     </button>
                 </div>
@@ -53,7 +70,9 @@
             <!-- Contêiner para o checkbox e link -->
             <div class="relative flex justify-between items-center mt-3">
                 <label class="cursor-pointer label">
-                    <input type="checkbox" id="myCheckbox" class="checkbox checkbox-success checkbox-sm checked-border-white  mr-2 ml-1" />
+                    <input type="checkbox" 
+                           id="myCheckbox" 
+                           class="checkbox checkbox-success checkbox-sm checked-border-white  mr-2 ml-1" />
                     <span for="myCheckbox" class="label-text flex items-center text-customGrey-default font-poppins font-normal text-sm leading-personalized">Permanecer logado</span>
                 </label>
                 <a href="/forgot-password" class="mr-2 text-customGreen-dark font-poppins font-normal text-sm leading-personalized underline">Esqueceu a Senha?</a>
@@ -61,7 +80,8 @@
 
             <!-- Botão para efetuar o login -->
             <div class="relative mt-4">
-                <button type="submit" class="w-full h-entrar-height-px rounded-lg-border bg-customGreen-default text-customGrey-light text-center font-poppins font-normal text-base leading-personalized">Entrar</button>
+                <button type="submit" 
+                        class="w-full h-entrar-height-px rounded-lg-border bg-customGreen-default text-customGrey-light text-center font-poppins font-normal text-base leading-personalized">Entrar</button>
             </div>
 
             <!-- (Design apenas) Novo por aqui? -->
@@ -73,7 +93,9 @@
 
             <!-- Botão que leva a tela de cadastro -->
             <div class="relative mt-2">
-                <button type="button" onclick="redirectToRegisterPersonalInfo()" class="w-full h-entrar-height-px rounded-lg-border bg-customGreen-light text-customGrey-light text-center font-poppins font-normal text-base leading-personalized">Cadastre-se</button>
+                <button type="button" 
+                        onclick="redirectToRegisterPersonalInfo()" 
+                        class="w-full h-entrar-height-px rounded-lg-border bg-customGreen-light text-customGrey-light text-center font-poppins font-normal text-base leading-personalized">Cadastre-se</button>
             </div>
     
 
