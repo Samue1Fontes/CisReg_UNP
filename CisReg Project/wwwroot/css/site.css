@@ -765,6 +765,11 @@ html {
 }
 
 @media (hover:hover) {
+  .checkbox-success:hover {
+    --tw-border-opacity: 1;
+    border-color: var(--fallback-su,oklch(var(--su)/var(--tw-border-opacity)));
+  }
+
   .label a:hover {
     --tw-text-opacity: 1;
     color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
@@ -939,6 +944,27 @@ html {
       linear-gradient(0deg, var(--chkbg) 43%, var(--chkfg) 43%, var(--chkfg) 57%, var(--chkbg) 57%);
 }
 
+.checkbox-success {
+  --chkbg: var(--fallback-su,oklch(var(--su)/1));
+  --chkfg: var(--fallback-suc,oklch(var(--suc)/1));
+  --tw-border-opacity: 1;
+  border-color: var(--fallback-su,oklch(var(--su)/var(--tw-border-opacity)));
+}
+
+.checkbox-success:focus-visible {
+  outline-color: var(--fallback-su,oklch(var(--su)/1));
+}
+
+.checkbox-success:checked,
+    .checkbox-success[aria-checked="true"] {
+  --tw-border-opacity: 1;
+  border-color: var(--fallback-su,oklch(var(--su)/var(--tw-border-opacity)));
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-su,oklch(var(--su)/var(--tw-bg-opacity)));
+  --tw-text-opacity: 1;
+  color: var(--fallback-suc,oklch(var(--suc)/var(--tw-text-opacity)));
+}
+
 @keyframes checkmark {
   0% {
     background-position-y: 5px;
@@ -951,6 +977,13 @@ html {
   100% {
     background-position-y: 0;
   }
+}
+
+.label-text {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
 }
 
 .input input {
@@ -988,6 +1021,18 @@ html {
   --tw-border-opacity: 1;
   border-color: var(--fallback-a,oklch(var(--a)/var(--tw-border-opacity)));
   outline-color: var(--fallback-a,oklch(var(--a)/1));
+}
+
+.input-error {
+  --tw-border-opacity: 1;
+  border-color: var(--fallback-er,oklch(var(--er)/var(--tw-border-opacity)));
+}
+
+.input-error:focus,
+    .input-error:focus-within {
+  --tw-border-opacity: 1;
+  border-color: var(--fallback-er,oklch(var(--er)/var(--tw-border-opacity)));
+  outline-color: var(--fallback-er,oklch(var(--er)/1));
 }
 
 .input:has(> input[disabled]),
@@ -1150,6 +1195,16 @@ html {
   }
 }
 
+[type="checkbox"].checkbox-sm {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+[type="checkbox"].checkbox-md {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
 .fixed {
   position: fixed;
 }
@@ -1162,8 +1217,8 @@ html {
   position: relative;
 }
 
-.left-152-px {
-  left: 152px;
+.left-1\/2 {
+  left: 50%;
 }
 
 .left-4 {
@@ -1190,6 +1245,14 @@ html {
   top: -323px;
 }
 
+.right-6 {
+  right: 1.5rem;
+}
+
+.right-5 {
+  right: 1.25rem;
+}
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -1205,6 +1268,10 @@ html {
 
 .mb-4 {
   margin-bottom: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .ml-2 {
@@ -1227,8 +1294,12 @@ html {
   margin-top: 0.75rem;
 }
 
-.mt-6 {
-  margin-top: 1.5rem;
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .block {
@@ -1247,8 +1318,16 @@ html {
   height: 125rem;
 }
 
+.h-40-px {
+  height: 40px;
+}
+
 .h-474-px {
   height: 474px;
+}
+
+.h-712-px {
+  height: 712px;
 }
 
 .h-entrar-height-px {
@@ -1263,6 +1342,10 @@ html {
   width: 125rem;
 }
 
+.w-360-px {
+  width: 360px;
+}
+
 .w-394-px {
   width: 394px;
 }
@@ -1275,12 +1358,13 @@ html {
   width: 100%;
 }
 
-.w-53-px {
-  width: 53px;
-}
-
 .flex-grow {
   flex-grow: 1;
+}
+
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .-translate-y-1\/2 {
@@ -1296,6 +1380,10 @@ html {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .items-center {
@@ -1316,10 +1404,6 @@ html {
 
 .rounded-lg-border {
   border-radius: 0.5rem;
-}
-
-.border {
-  border-width: 1px;
 }
 
 .border-t {
@@ -1365,6 +1449,10 @@ html {
 
 .pr-12 {
   padding-right: 3rem;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-center {
@@ -1431,14 +1519,14 @@ html {
   text-decoration-line: underline;
 }
 
+.accent-white {
+  accent-color: #fff;
+}
+
 .shadow-login {
   --tw-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   --tw-shadow-colored: 0px 4px 4px 0px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.outline {
-  outline-style: solid;
 }
 
 @media (min-width: 1500px) {

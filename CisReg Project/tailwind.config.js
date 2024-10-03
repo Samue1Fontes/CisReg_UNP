@@ -43,8 +43,8 @@ module.exports = {
                 // Titulo do login
                 '5-rem': '5.5rem',
 
-                // Campos E-mail & Senha 
-                '53-px': '53px',
+                // Campos de Input
+                '360-px': '360px',
                 '22-px': '22px',
 
             },
@@ -58,8 +58,13 @@ module.exports = {
                 // Formulário de Login
                 '474-px': '474px',
 
+                // Formulário de Registro
+                '712-px': '712px',
+                '40-px': '40px',
+
                 // Botao "Entrar"
                 'entrar-height-px': '40px',
+
             },
 
             backgroundImage: {
@@ -91,7 +96,6 @@ module.exports = {
                 '170-px': '170px',
 
                 // Titulo do Login
-                '152-px': '152px',
                 '26-px': '26px',
 
                 // UNP Logo
@@ -158,12 +162,6 @@ module.exports = {
             },
 
             padding: {
-                // Formulario de Login
-                '4': '1rem',
-                '8': '2rem',
-            },
-
-            margin: {
                 // Formulario de Login
                 '4': '1rem',
                 '8': '2rem',
