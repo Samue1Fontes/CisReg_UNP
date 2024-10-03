@@ -1,4 +1,5 @@
 ﻿@page "/"
+
 @model CisReg_Project.Pages.Controller.HomeModel
 @{
     ViewData["Title"] = "Login"; 
@@ -38,7 +39,9 @@
                            id="email" 
                            name="email" 
                            class="input input-accent pl-10 w-full bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
-                           placeholder="Digite seu e-mail" 
+                           placeholder="Digite seu e-mail"
+                           pattern="^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                           oninput="applyEmailFormatAtLogin(this); validateFieldInputAtLogin(this)"
                            required/>
                 </div>
             </div>
@@ -52,7 +55,9 @@
                            id="password" 
                            name="password" 
                            class="input input-accent pl-10 pr-12 w-full bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
-                           placeholder="Digite sua senha" 
+                           placeholder="Digite sua senha"
+                           pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[@@$!%*?&])[A-Za-z\d@@$!%*?&]{8,}"
+                           oninput="validateFieldInputAtLogin(this)"
                            required/>
                     <button type="button" 
                             onclick="togglePasswordVisibility()" 
