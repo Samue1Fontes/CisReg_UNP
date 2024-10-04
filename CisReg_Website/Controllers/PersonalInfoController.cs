@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CisReg_Website.Models;
+using Newtonsoft.Json;
 
 namespace CisReg_Website.Controllers
 {
@@ -16,13 +17,15 @@ namespace CisReg_Website.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("RegisterProfessionalInfo");
+                TempData["PersonalInfo"] = JsonConvert.SerializeObject(model);
+                return RedirectToAction("Index","ProfessionalInfo");
             }
 
-            return View(model);
+            return View();
         }
 
-        public IActionResult RegisterProfessionalInfo()
+        [HttpGet]
+        public IActionResult ProfessionalInfo()
         {
             return View();
         }

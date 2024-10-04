@@ -1,5 +1,4 @@
-﻿
-
+﻿@model CisReg_Website.Models.ProfessionalInfoModel
 @{
     ViewData["Title"] = "Register";
 }
@@ -22,7 +21,7 @@
 
     <!-- Formulário de Login -->
     <div class="w-394-px h-712-px rounded-lg-border bg-customGrey-light shadow-login absolute flex justify-center custom-lg:right-170-px custom-lg:top-1/2 custom-lg:transform custom-lg:-translate-y-1/2 custom-lg:left-auto custom-lg:bottom-auto custom-lg:translate-x-0">
-        <form method="post" action="/register-professional-info" class="register-personal-info-form p-4">
+        <form method="post" class="register-personal-info-form p-4">
 
             <!-- Título "Informações Profissionais" -->
             <div class="mb-4">
@@ -35,7 +34,8 @@
                 <div>
                     <input type="number"
                            id="registro"
-                           name="registro"
+                           name="registrationNumber"
+                           asp-for="registrationNumber"
                            class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4"
                            placeholder="Insira Aqui"
                            required 
@@ -49,7 +49,8 @@
                 <div>
                     <input type="text" 
                            id="especialidade"
-                           name="especialidade"
+                           name="specialty"
+                           asp-for="specialty"
                            class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
                            placeholder="Insira Aqui" 
                            required />
@@ -63,7 +64,8 @@
                 <div>
                     <input type="text" 
                            id="formacao"
-                           name="formacao"
+                           name="academicTraining"
+                           asp-for="academicTraining"
                            class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4"
                            placeholder="Insira aqui" 
                            required />

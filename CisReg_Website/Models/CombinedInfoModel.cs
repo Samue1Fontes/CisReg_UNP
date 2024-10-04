@@ -4,12 +4,11 @@ using System.ComponentModel.DataAnnotations;
 namespace CisReg_Website.Models
 {
 
-    public class PersonalInfoModel
+    public class CombinedInfoModel
     {
+        // Dados Pessoais
         public string CompleteName { get; set; } = string.Empty;
-
         public string Email { get; set; } = string.Empty;
-
         public string CPF { get; set; } = string.Empty;
 
         [DataType(DataType.Date)]
@@ -18,6 +17,7 @@ namespace CisReg_Website.Models
         [DataType(DataType.Password)]
         public string Password { get; set; } = string.Empty;
 
+        // Dados Profissionais
         public int registrationNumber { get; set; }
         public string specialty { get; set; } = string.Empty;
         public string academicTraining { get; set; } = string.Empty;
