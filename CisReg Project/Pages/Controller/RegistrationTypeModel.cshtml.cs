@@ -3,22 +3,26 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace CisReg_Project.Pages.Controller
 {
+    public class RegistrationTypeViewModel
+    {
+        public string SelectedRegistrationType { get; set; } = string.Empty;
+    }
+
     public class RegistrationTypeModel : PageModel
     {
-
-        // Variável para armazenar o tipo de cadastro selecionado
         [BindProperty]
-        public string SelectedRegistrationType { get; set; } = "";
+        public RegistrationTypeViewModel ViewModel { get; set; } = new();
 
         public IActionResult OnPost()
         {
-            if (!string.IsNullOrEmpty(SelectedRegistrationType))
+            if (string.IsNullOrEmpty(ViewModel.SelectedRegistrationType))
             {
-
-                return RedirectToPage("/registration-personal-info");
+                ModelState.AddModelError(string.Empty, "Por favor, selecione um tipo de cadastro.");
+                return Page();
             }
 
             return RedirectToPage("/registration-personal-info");
         }
     }
+    
 }

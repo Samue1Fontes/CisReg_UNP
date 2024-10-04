@@ -21,6 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Controller\PersonalInfoModel.cshtml.cs" />
+    <Compile Remove="Pages\Controller\RegistrationTypeModel.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\lib\images\unp_logo.png" />
   </ItemGroup>
 
@@ -29,6 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Pages\Controller\" />
     <Folder Include="wwwroot\lib\images\" />
   </ItemGroup>
 

@@ -1,6 +1,5 @@
 ﻿@page "/registration-type"
 
-@model CisReg_Project.Pages.Controller.RegistrationTypeModel
 @{
     ViewData["Title"] = "Register";
     Layout = "Layout/MainLayout";
@@ -38,7 +37,7 @@
 
     <!-- Formulário de Cadastro (Tipo de Cadastro) -->
     <div class="w-394-px h-474-px rounded-lg-border bg-customGrey-light shadow-login absolute flex justify-center custom-lg:right-170-px custom-lg:top-1/2 custom-lg:transform custom-lg:-translate-y-1/2 custom-lg:left-auto custom-lg:bottom-auto custom-lg:translate-x-0">
-        <form method="post" class="registration-type-form p-4">
+        <form method="get" action="/registration-personal-info" class="registration-type-form p-4" onsubmit="return validateForm()">
 
             <!-- Título "Tipo de Cadastro" -->
             <div class="mb-12 mt-4">
@@ -52,8 +51,7 @@
                     <div class="form-control">
                         <label class="label cursor-pointer">
                             <input type="radio" 
-                                   asp-for="SelectedRegistrationType" 
-                                   name="SelectedRegistrationType" 
+                                   name="SelectedRegistrationType"
                                    value="Prefeitura" 
                                    class="radio radio-sucess checked:bg-success radio-sm mr-2" 
                                    />
@@ -66,10 +64,9 @@
                 <div class="w-321-px h-44-px border border-customGreen-default rounded-lg-border p-4 flex items-center mb-8">
                     <div class="form-control">
                         <label class="label cursor-pointer">
-                            <input type="radio" 
-                                    asp-for="SelectedRegistrationType" 
-                                    name="SelectedRegistrationType" 
-                                    value="Usuario"
+                            <input type="radio"
+                                   name="SelectedRegistrationType"
+                                   value="Usuario"
                                     class="radio radio-sucess checked:bg-success radio-sm mr-2"
                                    />
                             <span class="label-text text-customGreen-default font-poppins text-base leading-normal">Usuário</span>
@@ -81,9 +78,8 @@
                 <div class="w-321-px h-44-px border border-customGreen-default rounded-lg-border p-4 flex items-center mb-12">
                     <div class="form-control">
                         <label class="label cursor-pointer">
-                            <input type="radio" 
-                                   asp-for="SelectedRegistrationType" 
-                                   name="SelectedRegistrationType" 
+                            <input type="radio"
+                                   name="SelectedRegistrationType"
                                    value="ProfissionalDeSaude" 
                                    class="radio radio-sucess checked:bg-success radio-sm mr-2"
                                    />
