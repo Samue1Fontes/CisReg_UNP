@@ -10,7 +10,7 @@ function validateForm() {
         return false;
     }
 
-    const selectedValue = selectedType.value; 
+    const selectedValue = selectedType.value;
 
     if (selectedType && selectedValue === 'ProfissionalDeSaude') {
         return true;
