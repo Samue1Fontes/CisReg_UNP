@@ -32,4 +32,8 @@
     <Folder Include="wwwroot\lib\images\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.29.0" />
+  </ItemGroup>
+
 </Project>
