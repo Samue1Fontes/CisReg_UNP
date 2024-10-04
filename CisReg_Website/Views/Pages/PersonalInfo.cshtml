@@ -1,0 +1,146 @@
+﻿@page "/registration-personal-info"
+
+@model CisReg_Website.Models.PersonalInfoModel
+@{
+    ViewData["Title"] = "Register";
+
+}
+
+
+<!-- Container flexível para centralização -->
+<div class="relative min-h-screen flex items-center justify-center p-4 bg-customGrey-light">
+
+    <!-- Primeiro círculo -->
+    <div class="custom-lg:w-61-rem custom-lg:h-61-rem custom-lg:left-minus-133-px w-125-rem h-125-rem bg-green-gradient rounded-full aspect-circle fixed top-minus-323-px"></div>
+
+
+    <!-- UNP Logo -->
+    <div class="custom-lg:z-10 custom-lg:left-150-px custom-lg:top-1/2 custom-lg:transform custom-lg:-translate-y-1/2 custom-lg:bottom-auto custom-lg:right-auto absolute">
+        <img src="lib/images/logo-unp.svg" class="scale-200" />
+    </div>
+
+    <!-- Segundo círculo -->
+    <div class="custom-lg:w-61-rem custom-lg:h-61-rem custom-lg:left-minus-267-px w-125-rem h-125-rem bg-green-gradient rounded-full aspect-circle fixed top-294-px"></div>
+
+    <!-- Formulário de Cadastro (Informações Pessoais) -->
+    <div class="w-394-px h-712-px rounded-lg-border bg-customGrey-light shadow-login absolute flex justify-center custom-lg:right-170-px custom-lg:top-1/2 custom-lg:transform custom-lg:-translate-y-1/2 custom-lg:left-auto custom-lg:bottom-auto custom-lg:translate-x-0">
+        <form method="post" class="register-personal-info-form p-4">
+
+            <!-- Título "Informações Pessoais" -->
+            <div class="mb-4">
+                <h3 class="text-customGreen-light text-center font-poppins font-bold text-4x1 leading-normal">Informações Pessoais</h3>
+            </div>
+
+            <!-- Campo "Nome Completo" -->
+            <div class="mb-3">
+                <label for="full-name" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block">Nome Completo</label>
+                <div>
+                    <input type="text"
+                           id="full-name"
+                           name="CompleteName"
+                           asp-for="CompleteName"
+                           class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4"
+                           placeholder="Nome Sobrenome"
+                           pattern="^[a-zA-Z]+(?:\s[a-zA-Z]+)*$"
+                           oninput="validateFieldInput(this)"
+                           required />
+                </div>
+            </div>
+
+            <!-- Campo "E-mail" -->
+            <div class="mb-3">
+                <label for="email" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block">E-mail</label>
+                <div>
+                    <input type="email" 
+                           id="email" 
+                           name="Email"
+                           asp-for="Email"
+                           class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
+                           placeholder="exemplo@email.com"
+                           pattern="^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                           oninput="applyEmailFormat(this); validateFieldInput(this)"
+                           required />
+                </div>
+            </div>
+
+
+            <!-- Campo "CPF" -->
+            <div class="mb-3">
+                <label for="cpf" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block">CPF</label>
+                <div>
+                    <input type="text" 
+                           id="cpf" 
+                           name="CPF"
+                           asp-for="CPF"
+                           class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
+                           maxlength="14"
+                           placeholder="123.456.789-09"
+                           pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$"
+                           oninput="applyCpfMask(this); validateFieldInput(this)"
+                           required />
+                </div>
+            </div>
+
+            <!-- Campo "Data de Nascimento" -->
+            <div class="mb-3">
+                <label for="datenasc" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block">Data de Nascimento</label>
+                <div>
+                    <input type="date" 
+                           id="datenasc" 
+                           name="BornDate"
+                           asp-for="Email"
+                           class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4"
+                           oninput="validateFieldInput(this)"
+                           required />
+                </div>
+            </div>
+
+            <!-- Campo "Senha" -->
+            <div class="mb-3">
+                <label for="password" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block">Senha</label>
+                <div class="relative">
+                    <input type="password" 
+                           id="password" 
+                           name="Password"
+                           asp-for="Password"
+                           class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
+                           placeholder="Digite sua senha"
+                           pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[@@$!%*?&])[A-Za-z\d@@$!%*?&]{8,}"
+                           oninput="validateFieldInput(this)"
+                           required />
+                    <button type="button" 
+                            onclick="togglePasswordVisibility('password', 'toggle-icon-password')" 
+                            class="absolute right-6 top-1/2 transform -translate-y-1/2">
+                        <i class="fa-solid fa-eye text-customGrey-default" id="toggle-icon-password"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Campo "Confirme a Senha" -->
+            <div class="mb-6">
+                <label for="confirm-password" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block">Confirmar Senha</label>
+                <div class="relative">
+                    <input type="password" 
+                           id="confirm-password" 
+                           name="confirm-password" 
+                           class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
+                           placeholder="Confirme sua senha" 
+                           oninput="validateFieldInput(this)"
+                           required />
+                    <button type="button" 
+                            onclick="togglePasswordVisibility('confirm-password', 'toggle-icon-confirm-password')" 
+                            class="absolute right-6 top-1/2 transform -translate-y-1/2">
+                        <i class="fa-solid fa-eye text-customGrey-default" id="toggle-icon-confirm-password"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Botão para prosseguir de Página (para Informações Profissionais) -->
+            <div>
+                <button type="submit" class="w-full h-entrar-height-px rounded-lg-border bg-customGreen-default text-customGrey-light text-center font-poppins font-normal text-base leading-personalized">Prosseguir</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="~/js/personal-info.js"></script>

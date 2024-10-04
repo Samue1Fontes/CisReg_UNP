@@ -1,0 +1,83 @@
+﻿@page "/registration-professional-info"
+
+
+@{
+    ViewData["Title"] = "Register";
+
+}
+
+
+<!-- Container flexível para centralização -->
+<div class="relative min-h-screen flex items-center justify-center p-4 bg-customGrey-light">
+
+    <!-- Primeiro círculo -->
+    <div class="custom-lg:w-61-rem custom-lg:h-61-rem custom-lg:left-minus-133-px w-125-rem h-125-rem bg-green-gradient rounded-full aspect-circle fixed top-minus-323-px"></div>
+
+
+    <!-- UNP Logo -->
+    <div class="custom-lg:z-10 custom-lg:left-150-px custom-lg:top-1/2 custom-lg:transform custom-lg:-translate-y-1/2 custom-lg:bottom-auto custom-lg:right-auto absolute">
+        <img src="lib/images/logo-unp.svg" class="scale-200" />
+    </div>
+
+    <!-- Segundo círculo -->
+    <div class="custom-lg:w-61-rem custom-lg:h-61-rem custom-lg:left-minus-267-px w-125-rem h-125-rem bg-green-gradient rounded-full aspect-circle fixed top-294-px"></div>
+
+    <!-- Formulário de Login -->
+    <div class="w-394-px h-712-px rounded-lg-border bg-customGrey-light shadow-login absolute flex justify-center custom-lg:right-170-px custom-lg:top-1/2 custom-lg:transform custom-lg:-translate-y-1/2 custom-lg:left-auto custom-lg:bottom-auto custom-lg:translate-x-0">
+        <form method="post" action="/register-professional-info" class="register-personal-info-form p-4">
+
+            <!-- Título "Informações Profissionais" -->
+            <div class="mb-4">
+                <h3 class="text-customGreen-light text-center font-poppins font-bold text-4x1 leading-normal">Informações Profissionais</h3>
+            </div>
+
+            <!-- Campo "Número de Registro" -->
+            <div class="mb-3">
+                <label for="registro" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block">Número de Registro</label>
+                <div>
+                    <input type="number"
+                           id="registro"
+                           name="registro"
+                           class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4"
+                           placeholder="Insira Aqui"
+                           required 
+                           />
+                </div>
+            </div>
+
+            <!-- Campo "Especialidades" -->
+            <div class="mb-3">
+                <label for="especialidade" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block">Especialidades</label>
+                <div>
+                    <input type="text" 
+                           id="especialidade"
+                           name="especialidade"
+                           class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
+                           placeholder="Insira Aqui" 
+                           required />
+                </div>
+            </div>
+
+
+            <!-- Campo "Formação Acadêmica" -->
+            <div class="mb-3">
+                <label for="formacao" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block">Formação Acadêmica</label>
+                <div>
+                    <input type="text" 
+                           id="formacao"
+                           name="formacao"
+                           class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4"
+                           placeholder="Insira aqui" 
+                           required />
+                </div>
+            </div>
+
+            <!-- Botão para Finalizar Cadastro (para Finalizar Cadastro) -->
+            <div>
+                <button type="submit" class="w-full h-entrar-height-px rounded-lg-border bg-customGreen-default text-customGrey-light text-center font-poppins font-normal text-base leading-personalized">Realizar Cadastro</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="~/js/personal-info.js"></script>
