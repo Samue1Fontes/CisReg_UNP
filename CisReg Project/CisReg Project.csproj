@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Pages\Controller\PersonalInfoModel.cshtml.cs" />
     <Compile Remove="Pages\Controller\RegistrationController.cs" />
     <Compile Remove="Pages\Controller\RegistrationTypeModel.cshtml.cs" />
   </ItemGroup>
