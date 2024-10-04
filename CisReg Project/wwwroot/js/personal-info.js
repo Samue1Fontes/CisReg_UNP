@@ -18,11 +18,6 @@ function togglePasswordVisibility(inputId, iconId) {
     }
 }
 
-// Função para redirecionar o usuário para a página de registro de Informações Profissionais.
-function redirectToRegisterProfessionalInfo() {
-    window.location.href = "/register-professional-info";
-}
-
 // Função para estilizar o campo de CPF, formatando-o em "127.138.491-92".
 function formatCpfInput(cpf) {
     // Remove caracteres não numéricos.
