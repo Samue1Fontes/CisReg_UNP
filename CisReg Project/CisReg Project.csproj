@@ -35,7 +35,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Controller\" />
     <Folder Include="wwwroot\lib\images\" />
   </ItemGroup>
 
