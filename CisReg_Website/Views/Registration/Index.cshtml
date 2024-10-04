@@ -37,7 +37,7 @@
 
     <!-- Formulário de Cadastro (Tipo de Cadastro) -->
     <div class="w-394-px h-474-px rounded-lg-border bg-customGrey-light shadow-login absolute flex justify-center custom-lg:right-170-px custom-lg:top-1/2 custom-lg:transform custom-lg:-translate-y-1/2 custom-lg:left-auto custom-lg:bottom-auto custom-lg:translate-x-0">
-        <form method="get" action="/registration-personal-info" class="registration-type-form p-4" onsubmit="return validateForm()">
+        <form method="post" class="registration-type-form p-4" onsubmit="return validateForm()">
 
             <!-- Título "Tipo de Cadastro" -->
             <div class="mb-12 mt-4">
@@ -47,8 +47,7 @@
             <!-- Opções -->
             <div class="relative">
                 <!-- Opção Prefeitura -->
-                <div class="w-321-px h-44-px border border-customGreen-default rounded-lg-border p-4 flex items-center mb-8">
-                    <div class="form-control">
+                <div class="w-321-px h-44-px border border-customGreen-default rounded-lg-border p-4 flex items-center mb-6">
                         <label class="label cursor-pointer">
                             <input type="radio" 
                                    name="SelectedRegistrationType"
@@ -57,12 +56,10 @@
                                    />
                             <span class="label-text text-customGreen-default font-poppins text-base leading-normal">Prefeitura</span>
                         </label>
-                    </div>
                 </div>
 
                 <!-- Opção Usuário -->
-                <div class="w-321-px h-44-px border border-customGreen-default rounded-lg-border p-4 flex items-center mb-8">
-                    <div class="form-control">
+                <div class="w-321-px h-44-px border border-customGreen-dark rounded-lg-border p-4 flex items-center mb-6">
                         <label class="label cursor-pointer">
                             <input type="radio"
                                    name="SelectedRegistrationType"
@@ -71,12 +68,10 @@
                                    />
                             <span class="label-text text-customGreen-default font-poppins text-base leading-normal">Usuário</span>
                         </label>
-                    </div>
                 </div>
 
                 <!-- Opção Profissional de sáude -->
-                <div class="w-321-px h-44-px border border-customGreen-default rounded-lg-border p-4 flex items-center mb-12">
-                    <div class="form-control">
+                <div class="w-321-px h-44-px border border-customGreen-default rounded-lg-border p-4 flex items-center mb-10">
                         <label class="label cursor-pointer">
                             <input type="radio"
                                    name="SelectedRegistrationType"
@@ -85,7 +80,6 @@
                                    />
                             <span class="label-text text-customGreen-default font-poppins text-base leading-normal">Profissional de Saúde</span>
                         </label>
-                    </div>
                 </div>
 
                 <!-- Botão que leva a tela de cadastro (PersonalInfo) -->

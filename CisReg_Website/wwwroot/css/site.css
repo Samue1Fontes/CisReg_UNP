@@ -792,11 +792,6 @@ html {
   --tw-border-opacity: 0.2;
 }
 
-.form-control {
-  display: flex;
-  flex-direction: column;
-}
-
 .label {
   display: flex;
   -webkit-user-select: none;
@@ -1291,6 +1286,10 @@ html {
   top: 294px;
 }
 
+.top-40-px {
+  top: 40px;
+}
+
 .top-minus-323-px {
   top: -323px;
 }
@@ -1298,6 +1297,10 @@ html {
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
 }
 
 .mb-12 {
@@ -1320,10 +1323,6 @@ html {
   margin-bottom: 1.5rem;
 }
 
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -1332,16 +1331,16 @@ html {
   margin-right: 0.5rem;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
 
 .mt-24 {
   margin-top: 6rem;
-}
-
-.mt-3 {
-  margin-top: 0.75rem;
 }
 
 .mt-4 {
@@ -1374,10 +1373,6 @@ html {
 
 .h-474-px {
   height: 474px;
-}
-
-.h-712-px {
-  height: 712px;
 }
 
 .h-entrar-height-px {
@@ -1466,6 +1461,11 @@ html {
 
 .border-t {
   border-top-width: 1px;
+}
+
+.border-customGreen-dark {
+  --tw-border-opacity: 1;
+  border-color: rgb(7 67 64 / var(--tw-border-opacity));
 }
 
 .border-customGreen-default {
@@ -1649,6 +1649,10 @@ html {
 
   .custom-lg\:h-61-rem {
     height: 61rem;
+  }
+
+  .custom-lg\:h-730-px {
+    height: 730px;
   }
 
   .custom-lg\:w-61-rem {

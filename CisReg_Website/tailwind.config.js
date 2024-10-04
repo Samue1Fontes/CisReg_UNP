@@ -6,7 +6,6 @@ module.exports = {
     safelist: [
         'input-error',
         'input-accent',
-        'radio',
         'radio-sucess',
     ],
 
@@ -67,7 +66,8 @@ module.exports = {
                 '474-px': '474px',
 
                 // Formulário de Registro
-                '712-px': '712px',
+                '730-px': '730px',
+                '530-px': '530px',
                 '40-px': '40px',
 
                 // Botao "Entrar"
@@ -111,6 +111,9 @@ module.exports = {
 
                 // UNP Logo
                 '150-px': '150px',
+
+                // Formulario de Informacoes Pessoais
+                '40-px': '40px',
 
 
 
@@ -186,7 +189,7 @@ module.exports = {
 
             // Responsividade da tela relativo ao form de login
             screens: {
-                'custom-lg': '1500px',
+                'custom-lg': '1500px'
             },
 
             zIndex: {

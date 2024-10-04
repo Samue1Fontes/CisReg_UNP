@@ -1,5 +1,5 @@
 ﻿
-// Views - Pages - PersonalInfo.cshtml
+// Views - PersonalInfo - Index.cshtml
 
 // Função que torna o password digitado visível por meio de uma troca de type (password -> text || text -> password), assim como o ícone. 
 // Levemente modificado, para alterar os respectivos campos segundo o uso: Senha e Confirme a Senha.

@@ -1,5 +1,5 @@
 ﻿
-// Views - Pages - Login.cshtml
+// Views - Login - Index.cshtml
 
 // Função que torna o password digitado visível por meio de uma troca de type (password -> text || text -> password), assim como o ícone.
 function togglePasswordVisibility() {
@@ -16,11 +16,6 @@ function togglePasswordVisibility() {
     }
 }
 
-
-// Função para redirecionar o usuário para a página de registro Tipo de Cadastro.
-function redirectToRegistrationType() {
-    window.location.href = "/registration-type";
-}
 
 // Função para estilizar o campo de E-mail, impedindo a utilização do espaço e deixando-o apenas em letras minúsculas.
 function formatEmailInputAtLogin(email) {

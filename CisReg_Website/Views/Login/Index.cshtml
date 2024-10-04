@@ -23,7 +23,7 @@
         <form method="post" class="login-form p-4">
 
             <!-- Título "Login" -->
-            <div class="mb-4">
+            <div class="">
                 <h3 class="w-5-rem text-customGreen-light text-center font-poppins font-bold text-4x1 leading-normal absolute left-1/2 transform -translate-x-1/2 top-26-px">Login</h3>
             </div>
 
@@ -65,7 +65,7 @@
             </div>
 
             <!-- Contêiner para o checkbox e link -->
-            <div class="relative flex justify-between items-center mt-3">
+            <div class="relative flex justify-between items-center mt-1">
                 <label class="cursor-pointer label">
                     <input type="checkbox" 
                            id="myCheckbox" 
@@ -76,7 +76,7 @@
             </div>
 
             <!-- Botão para efetuar o login -->
-            <div class="relative mt-4">
+            <div class="relative mt-2">
                 <button type="submit" 
                         class="w-full h-entrar-height-px rounded-lg-border bg-customGreen-default text-customGrey-light text-center font-poppins text-base leading-personalized">Entrar</button>
             </div>
@@ -91,7 +91,7 @@
             <!-- Botão que leva a tela de Cadastro (RegistrationType) -->
             <div class="relative mt-2">
                 <button type="button" 
-                        onclick="redirectToRegistrationType()"
+                        onclick="window.location.href='@Url.Action("Index", "Registration")'"
                         class="w-full h-entrar-height-px rounded-lg-border bg-customGreen-light text-customGrey-light text-center font-poppins text-base leading-personalized">Cadastre-se</button>
             </div>
     
