@@ -22,7 +22,9 @@
 
     <!-- Formulário de Cadastro (Informações Pessoais) -->
     <div class="w-394-px custom-lg:h-730-px top-40-px rounded-lg-border bg-customGrey-light shadow-login absolute flex justify-center custom-lg:right-170-px custom-lg:top-1/2 custom-lg:transform custom-lg:-translate-y-1/2 custom-lg:left-auto custom-lg:bottom-auto custom-lg:translate-x-0">
-        <form method="post" asp-action="Index" asp-controller="PersonalInfo" class="register-personal-info-form p-4">
+        <form method="post" asp-action="Index" asp-controller="PersonalInfo" class="register-personal-info-form p-4" autocomplete="off">
+
+            @Html.AntiForgeryToken()
 
             <!-- Título "Informações Pessoais" -->
             <div class="mb-4">
@@ -103,7 +105,7 @@
                            asp-for="Password"
                            class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
                            placeholder="Digite sua senha"
-                           pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[@@$!%*?&])[A-Za-z\d@@$!%*?&]{8,}"
+                           pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@@$!%*?&]{8,}"
                            oninput="validateFieldInput(this)"
                            required />
                     <button type="button" 

@@ -13,6 +13,7 @@ namespace CisReg_Website.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Index(PersonalInfoModel model)
         {
 
