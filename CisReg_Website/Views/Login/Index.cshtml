@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewData["Title"] = "Login"; 
+}
+
+<!-- Container flexível para centralização -->
+<div class="relative min-h-screen flex items-center justify-center p-4 bg-customGrey-light">
+
+    <!-- Primeiro círculo -->
+    <div class="custom-lg:w-61-rem custom-lg:h-61-rem custom-lg:left-minus-133-px w-125-rem h-125-rem bg-green-gradient rounded-full aspect-circle fixed top-minus-323-px"></div>
+
+
+    <!-- UNP Logo -->
+    <div class="custom-lg:z-10 custom-lg:left-150-px custom-lg:bottom-50-px bottom-50-px left-150-px z-10 custom-lg:transform custom-lg:right-auto fixed">
+        <img src="lib/images/logo-unp.svg" class="scale-200"/>
+    </div>
+
+    <!-- Segundo círculo -->
+    <div class="custom-lg:w-61-rem custom-lg:h-61-rem custom-lg:left-minus-267-px w-125-rem h-125-rem bg-green-gradient rounded-full aspect-circle fixed top-294-px"></div>
+
+    <!-- Formulário de Login -->
+    <div class="w-394-px h-474-px rounded-lg-border bg-customGrey-light shadow-login absolute custom-lg:right-170-px custom-lg:top-1/2 custom-lg:transform custom-lg:-translate-y-1/2 custom-lg:left-auto custom-lg:bottom-auto custom-lg:translate-x-0">
+        <form method="post" class="login-form p-4" autocomplete="off">
+
+            <!-- Título "Login" -->
+            <div class="relative">
+                <h3 class="w-5-rem text-customGreen-light text-center font-poppins font-bold text-4x1 leading-normal absolute left-1/2 transform -translate-x-1/2 top-26-px">Login</h3>
+            </div>
+
+            <!-- Campo de E-mail -->
+            <div class="relative mt-24 mb-3">
+                <label for="email" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins text-base leading-personalized mb-2 block">E-mail</label>
+                <div class="relative w-full">
+                    <i class="fa-solid fa-envelope absolute left-4 top-1/2 transform -translate-y-1/2 text-customGrey-default"></i>
+                    <input type="email" 
+                           id="email" 
+                           name="email" 
+                           class="input input-accent pl-10 w-full bg-white text-customGrey-default font-poppins text-base leading-4" 
+                           placeholder="Digite seu e-mail"
+                           pattern="^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                           oninput="applyEmailFormatAtLogin(this); validateFieldInputAtLogin(this)"
+                           required/>
+                </div>
+            </div>
+
+            <!-- Campo de Senha -->
+            <div class="relative">
+                <label for="password" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins text-base leading-personalized mb-2 block">Senha</label>
+                <div class="relative w-full">
+                    <i class="fa-solid fa-lock absolute left-4 top-1/2 transform -translate-y-1/2 text-customGrey-default"></i>
+                    <input type="password" 
+                           id="password" 
+                           name="password" 
+                           class="input input-accent pl-10 pr-12 w-full bg-white text-customGrey-default font-poppins text-base leading-4" 
+                           placeholder="Digite sua senha"
+                           pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[@@$!%*?&])[A-Za-z\d@@$!%*?&]{8,}"
+                           oninput="validateFieldInputAtLogin(this)"
+                           required/>
+                    <button type="button" 
+                            onclick="togglePasswordVisibility()" 
+                            class="absolute right-4 top-1/2 transform -translate-y-1/2">
+                        <i class="fa-solid fa-eye text-customGrey-default" id="toggle-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contêiner para o checkbox e link -->
+            <div class="relative flex justify-between items-center mt-1">
+                <label class="cursor-pointer label">
+                    <input type="checkbox" 
+                           id="myCheckbox" 
+                           class="checkbox checkbox-success checkbox-sm checked-border-white  mr-2 ml-1" />
+                    <span for="myCheckbox" class="label-text flex items-center text-customGrey-default font-poppins text-sm leading-personalized">Permanecer logado</span>
+                </label>
+                <a href="/forgot-password" class="mr-2 text-customGreen-dark font-poppins text-sm leading-personalized underline">Esqueceu a Senha?</a>
+            </div>
+
+            <!-- Botão para efetuar o login -->
+            <div class="relative mt-2">
+                <button type="submit" 
+                        class="w-full h-entrar-height-px rounded-lg-border bg-customGreen-default text-customGrey-light text-center font-poppins text-base leading-personalized">Entrar</button>
+            </div>
+
+            <!-- (Design apenas) Novo por aqui? -->
+            <div class="flex items-center justify-center mt-2">
+                <div class="border-t border-customGrey-default flex-grow"></div>
+                <span class="mx-4 text-customGrey-default font-popins text-sm">Novo por aqui?</span>
+                <div class="border-t border-customGrey-default flex-grow"></div>
+            </div>
+
+            <!-- Botão que leva a tela de Cadastro (RegistrationType) -->
+            <div class="relative mt-2">
+                <button type="button" 
+                        onclick="window.location.href='@Url.Action("Index", "Registration")'"
+                        class="w-full h-entrar-height-px rounded-lg-border bg-customGreen-light text-customGrey-light text-center font-poppins text-base leading-personalized">Cadastre-se</button>
+            </div>
+    
+
+        </form>
+    </div>
+</div>
+
+
+<script src="~/js/login.js"></script>
