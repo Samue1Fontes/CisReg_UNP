@@ -23,6 +23,8 @@
     <div class="w-394-px h-712-px rounded-lg-border bg-customGrey-light shadow-login absolute flex justify-center custom-lg:right-170-px custom-lg:top-1/2 custom-lg:transform custom-lg:-translate-y-1/2 custom-lg:left-auto custom-lg:bottom-auto custom-lg:translate-x-0">
         <form method="post" class="register-personal-info-form p-4">
 
+            @Html.AntiForgeryToken()
+
             <!-- Título "Informações Profissionais" -->
             <div class="mb-4">
                 <h3 class="text-customGreen-light text-center font-poppins font-bold text-4x1 leading-normal">Informações Profissionais</h3>

@@ -28,6 +28,7 @@ namespace CisReg_Website.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Submit()
         {
             var modelJson = TempData["CombinedInfo"] as string;
