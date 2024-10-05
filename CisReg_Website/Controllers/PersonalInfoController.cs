@@ -15,13 +15,14 @@ namespace CisReg_Website.Controllers
         [HttpPost]
         public IActionResult Index(PersonalInfoModel model)
         {
+
             if (ModelState.IsValid)
             {
                 TempData["PersonalInfo"] = JsonConvert.SerializeObject(model);
-                return RedirectToAction("Index","ProfessionalInfo");
+                return RedirectToAction("Index", "ProfessionalInfo");
             }
 
-            return View();
+            return View(model);
         }
 
         [HttpGet]
