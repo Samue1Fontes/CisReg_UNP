@@ -111,9 +111,11 @@ module.exports = {
 
                 // UNP Logo
                 '150-px': '150px',
+                '50-px': '50px',
 
                 // Formulario de Informacoes Pessoais
                 '40-px': '40px',
+
 
 
 
