@@ -50,35 +50,61 @@ namespace CisReg_Project.Data {
             return instance;
         }
 
-        // TODO: Implementar CRUD
-
-        public void Select() {
+        /// <summary>
+        /// Implementa a seleção dos dados contidos nos bancos
+        /// </summary>
+        /// <param name="collectionName">Nome da coleção (tabela) do banco</param>
+        /// <param name="filter">Definição do filtro para o processo de busca</param>
+        /// <returns>Retorna uma lista dos objetos encontrados no banco se não o retorno é nulo</returns>
+        public List<DataFoundation>? Select(string collectionName, FilterDefinition<DataFoundation> filter) {
             try {
+                var collection = database.GetCollection<DataFoundation>(collectionName);
+                return collection.FindAsync(filter).Result.ToList<DataFoundation>();
+            } catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Insere um novo objeto no banco
+        /// </summary>
+        /// <param name="collectionName">Nome da coleção (tabela) do banco</param>
+        /// <param name="value">Objecto a ser inserido no banco</param>
+        public void Insert(string collectionName, DataFoundation value) {
+            try {
+                database.GetCollection<DataFoundation>(collectionName).InsertOneAsync(value);
             } catch (Exception ex) {
                 Console.WriteLine(ex.Message);
             }
         }
 
-        public void Insert() {
+        /// <summary>
+        /// Atualiza os dados encontrados no banco
+        /// </summary>
+        /// <param name="collectionName">Nome da coleção (tabela) do banco</param>
+        /// <param name="filter">Definição do filtro para o processo de busca</param>
+        /// <param name="update">Definição dos valores para o processo de atualização</param>
+        public void Update(string collectionName, FilterDefinition<DataFoundation> filter, UpdateDefinition<DataFoundation> update) {
             try {
+                var collection = database.GetCollection<DataFoundation>(collectionName);
+                collection.UpdateOneAsync(filter, update);
             }
             catch (Exception ex) {
                 Console.WriteLine(ex.Message);
             }
         }
 
-        public void Update() {
+        /// <summary>
+        /// Deleta os dados do banco
+        /// </summary>
+        /// <param name="collectionName">Nome da coleção (tabela) do banco</param>
+        /// <param name="filter">Definição do filtro para o processo de busca</param>
+        public void Delete(string collectionName, FilterDefinition<DataFoundation> filter) {
             try {
-            }
-            catch (Exception ex) {
-                Console.WriteLine(ex.Message);
-            }
-        }
-
-        public void Delete() {
-            try {
-            }
-            catch (Exception ex) {
+                var collection = database.GetCollection<DataFoundation>(collectionName);
+                collection.DeleteOneAsync(filter);
+            } catch (Exception ex) {
                 Console.WriteLine(ex.Message);
             }
         }
