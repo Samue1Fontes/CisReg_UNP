@@ -6,22 +6,22 @@
 
 
 <!-- Container flexível para centralização -->
-<div class="relative min-h-screen flex items-center justify-center p-4 bg-customGrey-light">
+<div class="relative min-h-screen flex items-center custom-lg:justify-end justify-center bg-customGrey-light ">
 
     <!-- Primeiro círculo -->
     <div class="custom-lg:w-61-rem custom-lg:h-61-rem custom-lg:left-minus-133-px w-125-rem h-125-rem bg-green-gradient rounded-full aspect-circle fixed top-minus-323-px"></div>
 
 
     <!-- UNP Logo -->
-    <div class="custom-lg:z-10 custom-lg:left-150-px custom-lg:bottom-50-px bottom-50-px left-150-px z-10 custom-lg:transform custom-lg:right-auto fixed">
-        <img src="lib/images/logo-unp.svg" class="scale-200" />
+    <div class="custom-sm:bottom-50-px custom-sm:left-150-px custom-sm:z-10 fixed">
+        <img src="~/lib/images/logo-unp.svg" class="scale-200" />
     </div>
 
     <!-- Segundo círculo -->
     <div class="custom-lg:w-61-rem custom-lg:h-61-rem custom-lg:left-minus-267-px w-125-rem h-125-rem bg-green-gradient rounded-full aspect-circle fixed top-294-px"></div>
 
     <!-- Formulário de Cadastro (Informações Pessoais) -->
-    <div class="w-394-px custom-lg:h-730-px top-40-px rounded-lg-border bg-customGrey-light shadow-login absolute flex justify-center custom-lg:right-170-px custom-lg:top-1/2 custom-lg:transform custom-lg:-translate-y-1/2 custom-lg:left-auto custom-lg:bottom-auto custom-lg:translate-x-0">
+    <div class="z-10 custom-sm:w-394-px custom-sm:h-auto w-360-px rounded-lg-border bg-customGrey-light shadow-login flex flex-col justify-center items-center custom-lg:mr-36">
         <form method="post" asp-action="Index" asp-controller="PersonalInfo" class="register-personal-info-form p-4" autocomplete="off">
 
             @Html.AntiForgeryToken()
@@ -39,11 +39,12 @@
                            id="full-name"
                            name="CompleteName"
                            asp-for="CompleteName"
-                           class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4"
+                           class="input input-accent w-full h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4"
                            placeholder="Nome Sobrenome"
-                           pattern="^[a-zA-Z]+(?:\s[a-zA-Z]+)*$"
-                           oninput="validateFieldInput(this)"
+                           pattern="^([A-Z][a-z]+(?:\s[A-Z][a-z]+)+)$"
+                           oninput="validateFieldInput(this, 'Por favor, insira o nome completo.')"
                            required />
+                    <span id="full-name-error" class="hidden text-customRed-default text-left font-poppins font-normal text-xs leading-personalized hidden"></span>
                 </div>
             </div>
 
@@ -55,11 +56,11 @@
                            id="email" 
                            name="Email"
                            asp-for="Email"
-                           class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
+                           class="input input-accent w-full h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
                            placeholder="exemplo@email.com"
-                           pattern="^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                           oninput="applyEmailFormat(this); validateFieldInput(this)"
+                           oninput="applyEmailFormat(this); validateEmail(this, 'Por favor, insira um e-mail válido.')"
                            required />
+                    <span id="email-error" class="hidden text-customRed-default text-left font-poppins font-normal text-xs leading-personalized hidden"></span>
                 </div>
             </div>
 
@@ -72,12 +73,13 @@
                            id="cpf" 
                            name="CPF"
                            asp-for="CPF"
-                           class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
+                           class="input input-accent w-full h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
                            maxlength="14"
                            placeholder="123.456.789-09"
                            pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$"
-                           oninput="applyCpfMask(this); validateFieldInput(this)"
+                           oninput="applyCpfMask(this); validateCPF(this, 'Por favor, insira um CPF válido.');"
                            required />
+                    <span id="cpf-error" class="hidden text-customRed-default text-left font-poppins font-normal text-xs leading-personalized"></span>
                 </div>
             </div>
 
@@ -89,9 +91,10 @@
                            id="datenasc" 
                            name="BornDate"
                            asp-for="BornDate"
-                           class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4"
-                           oninput="validateFieldInput(this)"
+                           class="input input-accent w-full h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4"
+                           oninput="validateAge(this, 'A idade não pode ser superior a 100 anos.')"
                            required />
+                    <span id="datenasc-error" class="hidden text-customRed-default text-left font-poppins font-normal text-xs leading-personalized"></span>
                 </div>
             </div>
 
@@ -99,21 +102,22 @@
             <div class="mb-2">
                 <label for="password" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2">Senha</label>
                 <div class="relative">
-                    <input type="password" 
-                           id="password" 
+                    <input type="password"
+                           id="password"
                            name="Password"
                            asp-for="Password"
-                           class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
+                           class="input input-accent w-full h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4"
                            placeholder="Digite sua senha"
                            pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@@$!%*?&]{8,}"
-                           oninput="validateFieldInput(this)"
+                           oninput="validateFieldInput(this, 'Por favor, insira uma senha válida.')"
                            required />
-                    <button type="button" 
-                            onclick="togglePasswordVisibility('password', 'toggle-icon-password')" 
+                    <button type="button"
+                            onclick="togglePasswordVisibility('password', 'toggle-icon-password')"
                             class="absolute right-6 top-1/2 transform -translate-y-1/2">
                         <i class="fa-solid fa-eye text-customGrey-default" id="toggle-icon-password"></i>
                     </button>
                 </div>
+                <span id="password-error" class="hidden text-customRed-default text-left font-poppins font-normal text-xs leading-personalized"></span>
             </div>
 
             <!-- Campo "Confirme a Senha" -->
@@ -123,9 +127,9 @@
                     <input type="password" 
                            id="confirm-password" 
                            name="confirm-password" 
-                           class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
+                           class="input input-accent w-full h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4"
                            placeholder="Confirme sua senha" 
-                           oninput="validateFieldInput(this)"
+                           oninput="verifyIfPasswordsMatch(this, 'As senhas não coincidem.')"
                            required />
                     <button type="button" 
                             onclick="togglePasswordVisibility('confirm-password', 'toggle-icon-confirm-password')" 
@@ -133,11 +137,12 @@
                         <i class="fa-solid fa-eye text-customGrey-default" id="toggle-icon-confirm-password"></i>
                     </button>
                 </div>
+                <span id="confirm-password-error" class="hidden text-customRed-default text-left font-poppins font-normal text-xs leading-personalized"></span>
             </div>
 
             <!-- Botão para prosseguir de Página (para Informações Profissionais) -->
             <div>
-                <button type="submit" class="w-full h-entrar-height-px rounded-lg-border bg-customGreen-default text-customGrey-light text-center font-poppins font-normal text-base leading-personalized">Prosseguir</button>
+                <button type="submit" class="w-full h-entrar-height-px rounded-lg-border bg-customGreen-default hover:bg-onHoverGreen-on_hover_default text-customGrey-light text-center font-poppins font-normal text-base leading-personalized">Prosseguir</button>
             </div>
         </form>
     </div>

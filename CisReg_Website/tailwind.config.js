@@ -22,11 +22,22 @@ module.exports = {
                     dark: '#074340',
                 },
 
+                // Padrões de verde (hover effect)
+                onHoverGreen: {
+                    on_hover_light: '#40a57b',
+                    on_hover_default: '#05ad89',
+                },
+
                 // Padroes de cinza
                 customGrey: {
                     light: '#F7F7F7',
                     default: '#828282',
                     dark: '#4F4F4F',
+                },
+
+                // Padrões de vermelho (error)
+                customRed: {
+                    default: '#E60000',
                 },
             },
 
@@ -43,6 +54,7 @@ module.exports = {
 
                 // Formulario de Login
                 '394-px': '394px',
+                '360-px': '360px',
 
                 // Titulo do login
                 '5-rem': '5.5rem',
@@ -108,17 +120,14 @@ module.exports = {
 
                 // Titulo do Login
                 '26-px': '26px',
+                '100-px': '-100px',
 
                 // UNP Logo
                 '150-px': '150px',
                 '50-px': '50px',
 
                 // Formulario de Informacoes Pessoais
-                '40-px': '40px',
-
-
-
-
+                '40-px': '120px',
 
             },
 
@@ -190,8 +199,11 @@ module.exports = {
             },
 
             // Responsividade da tela relativo ao form de login
+            // custom-lg (1500px) padrões serão definidos quando a tela for igual ou maior a 1500px
+            // custom-sm' (640px) padrões serão definidos quando a tela for igual ou maior a 640px
             screens: {
-                'custom-lg': '1500px'
+                'custom-lg': '1500px',
+                'custom-sm': '640px',
             },
 
             zIndex: {
@@ -202,7 +214,45 @@ module.exports = {
     },
     plugins: [
         require('@tailwindcss/aspect-ratio'),
-        require('daisyui')
+        require('daisyui'),
+
+        function ({ addComponents }) {
+            addComponents({
+                '.input-accent': {
+                    '--tw-border-opacity': '1',
+                    'border-color': 'var(--fallback-a, oklch(0 0 0 / var(--tw-border-opacity)))',
+                },
+                '.input-accent:focus, .input-accent:focus-within': {
+                    '--tw-border-opacity': '1',
+                    'border-color': 'var(--fallback-a, oklch(var(--a) / var(--tw-border-opacity)))',
+                    'outline': 'none',
+                },
+                '.input-error': {
+                    '--tw-border-opacity': '1',
+                    'border-color': '#E60000',
+                },
+                '.input-error:focus, .input-error:focus-within': {
+                    '--tw-border-opacity': '1',
+                    'border-color': '#E60000',
+                    'outline': 'none',
+                },
+                '.select': {
+                    'height': 'unset',
+                    'min-height': '0',
+                    'font-size': 'unset',
+                    'line-height': '1.5',
+                },
+                '.select-accent': {
+                    '--tw-border-opacity': '1',
+                    'border-color': 'var(--fallback-a, oklch(0 0 0 / var(--tw-border-opacity)))',
+                },
+                '.select-accent:focus': {
+                    '--tw-border-opacity': '1',
+                    'border-color': 'var(--fallback-a, oklch(var(--a) / var(--tw-border-opacity)))',
+                    'outline': 'none',
+                },
+            })
+        },
     ],
 }
 
