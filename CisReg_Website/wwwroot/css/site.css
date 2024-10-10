@@ -1712,6 +1712,10 @@ html {
   height: 40px;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1811,6 +1815,11 @@ html {
   border-color: rgb(130 130 130 / var(--tw-border-opacity));
 }
 
+.bg-\[\#57BE93\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(87 190 147 / var(--tw-bg-opacity));
+}
+
 .bg-customGreen-default {
   --tw-bg-opacity: 1;
   background-color: rgb(5 156 123 / var(--tw-bg-opacity));
@@ -1831,17 +1840,32 @@ html {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-red-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
-}
-
 .bg-green-gradient {
   background-image: linear-gradient(180deg, #059C7B 0%, #02362B 100%);
 }
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-48 {
+  padding: 12rem;
+}
+
+.p-40 {
+  padding: 10rem;
+}
+
+.p-20 {
+  padding: 5rem;
+}
+
+.p-16 {
+  padding: 4rem;
+}
+
+.p-12 {
+  padding: 3rem;
 }
 
 .pl-10 {
@@ -1852,12 +1876,28 @@ html {
   padding-right: 3rem;
 }
 
+.pb-80 {
+  padding-bottom: 20rem;
+}
+
+.pb-40 {
+  padding-bottom: 10rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
+}
+
 .text-left {
   text-align: left;
 }
 
 .text-center {
   text-align: center;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .font-poppins {
@@ -1874,6 +1914,21 @@ html {
 
 .text-sm {
   font-size: 0.875rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .font-bold {
@@ -1921,9 +1976,9 @@ html {
   color: rgb(247 247 247 / var(--tw-text-opacity));
 }
 
-.text-red-700 {
+.text-white {
   --tw-text-opacity: 1;
-  color: rgb(185 28 28 / var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .underline {

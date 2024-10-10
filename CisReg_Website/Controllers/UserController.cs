@@ -134,5 +134,12 @@ namespace CisReg_Website.Controllers
         {
             return _context.Users.Any(e => e.Id == id);
         }
+
+          public IActionResult SchedulesMade()
+        {
+            return View();
+        }
     }
+
+    
 }
