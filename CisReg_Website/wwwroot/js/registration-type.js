@@ -1,5 +1,5 @@
 ﻿
-// Views - RegistrationType - Index.cshtml
+// Views - Registration - Index.cshtml
 
 // Função que verifica se o usuário selecionou algum dos três tipos de cadastro.
 function validateForm() {

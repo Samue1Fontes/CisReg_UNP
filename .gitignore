@@ -1,2 +1,29 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
 
-/.vs
+# Build Results
+bin/
+obj/
+*.log
+*.tlog
+*.lastcodeanalysissucceeded
+*.pdb
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+*.log
+
+# Other
+.DS_Store
+Thumbs.db

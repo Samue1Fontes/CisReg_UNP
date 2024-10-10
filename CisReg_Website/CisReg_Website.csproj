@@ -13,6 +13,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\professional-info.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ContainerPort Include="8081" />
   </ItemGroup>
 
