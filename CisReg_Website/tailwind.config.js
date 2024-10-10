@@ -236,6 +236,21 @@ module.exports = {
                     'border-color': '#E60000',
                     'outline': 'none',
                 },
+                '.select': {
+                    'height': 'unset',
+                    'min-height': '0',
+                    'font-size': 'unset',
+                    'line-height': '1.5',
+                },
+                '.select-accent': {
+                    '--tw-border-opacity': '1',
+                    'border-color': 'var(--fallback-a, oklch(0 0 0 / var(--tw-border-opacity)))',
+                },
+                '.select-accent:focus': {
+                    '--tw-border-opacity': '1',
+                    'border-color': 'var(--fallback-a, oklch(var(--a) / var(--tw-border-opacity)))',
+                    'outline': 'none',
+                },
             })
         },
     ],

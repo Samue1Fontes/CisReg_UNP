@@ -41,8 +41,8 @@
                            asp-for="CompleteName"
                            class="input input-accent w-full h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4"
                            placeholder="Nome Sobrenome"
-                           pattern="^[a-zA-Z]+(?:\s[a-zA-Z]+)*$"
-                           oninput="validateFieldInput(this, 'Por favor, insira um nome válido.')"
+                           pattern="^([A-Z][a-z]+(?:\s[A-Z][a-z]+)+)$"
+                           oninput="validateFieldInput(this, 'Por favor, insira o nome completo.')"
                            required />
                     <span id="full-name-error" class="hidden text-customRed-default text-left font-poppins font-normal text-xs leading-personalized hidden"></span>
                 </div>
@@ -111,13 +111,13 @@
                            pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@@$!%*?&]{8,}"
                            oninput="validateFieldInput(this, 'Por favor, insira uma senha válida.')"
                            required />
-                    <span id="password-error" class="hidden text-customRed-default text-left font-poppins font-normal text-xs leading-personalized"></span>
                     <button type="button"
                             onclick="togglePasswordVisibility('password', 'toggle-icon-password')"
                             class="absolute right-6 top-1/2 transform -translate-y-1/2">
                         <i class="fa-solid fa-eye text-customGrey-default" id="toggle-icon-password"></i>
                     </button>
                 </div>
+                <span id="password-error" class="hidden text-customRed-default text-left font-poppins font-normal text-xs leading-personalized"></span>
             </div>
 
             <!-- Campo "Confirme a Senha" -->
@@ -131,13 +131,13 @@
                            placeholder="Confirme sua senha" 
                            oninput="verifyIfPasswordsMatch(this, 'As senhas não coincidem.')"
                            required />
-                    <span id="confirm-password-error" class="hidden text-customRed-default text-left font-poppins font-normal text-xs leading-personalized"></span>
                     <button type="button" 
                             onclick="togglePasswordVisibility('confirm-password', 'toggle-icon-confirm-password')" 
                             class="absolute right-6 top-1/2 transform -translate-y-1/2">
                         <i class="fa-solid fa-eye text-customGrey-default" id="toggle-icon-confirm-password"></i>
                     </button>
                 </div>
+                <span id="confirm-password-error" class="hidden text-customRed-default text-left font-poppins font-normal text-xs leading-personalized"></span>
             </div>
 
             <!-- Botão para prosseguir de Página (para Informações Profissionais) -->

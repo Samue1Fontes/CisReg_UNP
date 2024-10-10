@@ -6,7 +6,7 @@ namespace CisReg_Website.Models
 
     public class ProfessionalInfoModel
     {
-        public int registrationNumber { get; set; }
+        public string registrationNumber { get; set; }
         public string specialty { get; set; } = string.Empty;
         public string academicTraining { get; set; } = string.Empty;
 

@@ -20,7 +20,7 @@
     <div class="custom-lg:w-61-rem custom-lg:h-61-rem custom-lg:left-minus-267-px w-125-rem h-125-rem bg-green-gradient rounded-full aspect-circle fixed top-294-px"></div>
 
     <!-- Formulário de Login -->
-    <div class="z-10 w-394-px h-712-px rounded-lg-border bg-customGrey-light shadow-login flex flex-col justify-center items-center custom-lg:mr-36">
+    <div class="z-10 custom-sm:w-394-px custom-sm:h-auto w-360-px rounded-lg-border bg-customGrey-light shadow-login flex flex-col justify-center items-center custom-lg:mr-36">
         <form method="post" class="register-personal-info-form p-4" autocomplete="off">
 
             @Html.AntiForgeryToken()
@@ -34,43 +34,76 @@
             <div class="mb-3">
                 <label for="registro" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block">Número de Registro</label>
                 <div>
-                    <input type="number"
+                    <input type="text"
                            id="registro"
-                           name="registrationNumber"
+                           name="registerNumber"
                            asp-for="registrationNumber"
                            class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4"
-                           placeholder="Insira Aqui"
+                           placeholder="CRM-RN 123456"
                            required 
                            />
                 </div>
             </div>
 
-            <!-- Campo "Especialidades" -->
+            <!-- Campo "Formação Acadêmica" -->
             <div class="mb-3">
-                <label for="especialidade" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block">Especialidades</label>
+                <label for="formacao" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block">Formação Acadêmica</label>
                 <div>
-                    <input type="text" 
-                           id="especialidade"
-                           name="specialty"
-                           asp-for="specialty"
-                           class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" 
-                           placeholder="Insira Aqui" 
-                           required />
+                    <select id="formacao"
+                            name="academicTraining"
+                            asp-for="academicTraining"
+                            class="select select-accent !w-360-px !h-40-px !bg-white !text-customGrey-default !font-poppins !font-normal !text-base"
+                            required>
+                        <option value="" disabled selected>Selecione uma formação</option>
+                        <option value="Graduação em Medicina">Graduação em Medicina</option>
+                        <option value="Residência Médica">Residência Médica</option>
+                        <option value="Pós-graduação">Pós-graduação</option>
+                        <option value="Mestrado">Mestrado</option>
+                        <option value="Doutorado">Doutorado</option>
+                    </select>
                 </div>
             </div>
 
-
-            <!-- Campo "Formação Acadêmica" -->
+            <!-- Campo "Especialidades" -->
             <div class="mb-4">
-                <label for="formacao" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block">Formação Acadêmica</label>
+                <label for="especialidade" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block">Especialidades</label>
                 <div>
-                    <input type="text" 
-                           id="formacao"
-                           name="academicTraining"
-                           asp-for="academicTraining"
-                           class="input input-accent w-360-px h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4"
-                           placeholder="Insira aqui" 
-                           required />
+                    <select id="especialidade"
+                            name="specialty"
+                            asp-for="specialty"
+                            class="select select-accent !w-360-px !h-40-px !bg-white !text-customGrey-default !font-poppins !font-normal !text-base"
+                            required>
+                        <option value="" disabled selected>Selecione uma especialidade</option>
+                        <option value="Clínico Geral">Clínico Geral</option>
+                        <option value="Anestesiologia">Anestesiologia</option>
+                        <option value="Cardiologia">Cardiologia</option>
+                        <option value="Dermatologia">Dermatologia</option>
+                        <option value="Endocrinologia">Endocrinologia</option>
+                        <option value="Gastroenterologia">Gastroenterologia</option>
+                        <option value="Geriatria">Geriatria</option>
+                        <option value="Ginecologia e Obstetrícia">Ginecologia e Obstetrícia</option>
+                        <option value="Hematologia">Hematologia</option>
+                        <option value="Infectologia">Infectologia</option>
+                        <option value="Neurologia">Neurologia</option>
+                        <option value="Oftalmologia">Oftalmologia</option>
+                        <option value="Ortopedia">Ortopedia</option>
+                        <option value="Otorrinolaringologia">Otorrinolaringologia</option>
+                        <option value="Pediatria">Pediatria</option>
+                        <option value="Psiquiatria">Psiquiatria</option>
+                        <option value="Reumatologia">Reumatologia</option>
+                        <option value="Medicina de Família e Comunidade">Medicina de Família e Comunidade</option>
+                        <option value="Cirurgia Geral">Cirurgia Geral</option>
+                        <option value="Cirurgia Plástica">Cirurgia Plástica</option>
+                        <option value="Medicina do Trabalho">Medicina do Trabalho</option>
+                        <option value="Medicina Intensiva">Medicina Intensiva</option>
+                        <option value="Medicina Paliativa">Medicina Paliativa</option>
+                        <option value="Patologia">Patologia</option>
+                        <option value="Radiologia">Radiologia</option>
+                        <option value="Medicina Esportiva">Medicina Esportiva</option>
+                        <option value="Medicina Legal">Medicina Legal</option>
+                        <option value="Genética Médica">Genética Médica</option>
+
+                    </select>
                 </div>
             </div>
 
