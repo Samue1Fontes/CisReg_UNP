@@ -1,4 +1,6 @@
-﻿using MongoDB.Driver;
+﻿using CisReg_Website.Models;
+using MongoDB.Bson.Serialization;
+using MongoDB.Driver;
 
 namespace CisReg_Website.Data
 {
@@ -37,6 +39,10 @@ namespace CisReg_Website.Data
                 map.MapCreator(c => new Classe(...));
             });
             */
+            BsonClassMap.RegisterClassMap<ProfessionalInfoModel>(map => {
+                map.AutoMap();
+                map.MapCreator(c => new ProfessionalInfoModel());
+            });
         }
 
         /// <summary>
