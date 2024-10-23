@@ -13,6 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\layout.js" />
     <Content Remove="wwwroot\js\professional-info.js" />
   </ItemGroup>
 

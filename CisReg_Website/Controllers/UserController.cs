@@ -1,4 +1,3 @@
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CisReg_Website.Domain;
@@ -137,4 +136,3 @@ namespace CisReg_Website.Controllers
         }
     }
 }
-

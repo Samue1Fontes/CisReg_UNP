@@ -129,6 +129,10 @@ module.exports = {
                 // Formulario de Informacoes Pessoais
                 '40-px': '120px',
 
+                // Range de cor (background)
+                '5-px': '-10px',
+                '10-px': '10px',
+
             },
 
             scale: {
@@ -250,6 +254,14 @@ module.exports = {
                     '--tw-border-opacity': '1',
                     'border-color': 'var(--fallback-a, oklch(var(--a) / var(--tw-border-opacity)))',
                     'outline': 'none',
+                },
+                '.range': {
+                    ' --range-shdw': '#57BE93',
+                    'width': '40%',
+                },
+                '.range:focus-visible::-webkit-slider-thumb': {
+                    ' --focus-shadow': 'box-shadow: 0 0 0 6px white inset, 0 0 0 2rem var(--range-shdw) inset',
+
                 },
             })
         },
