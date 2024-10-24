@@ -14,7 +14,7 @@ namespace CisReg_Website.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Index(PersonalInfoModel model)
+        public IActionResult Submit(PersonalInfoModel model)
         {
 
             if (ModelState.IsValid)

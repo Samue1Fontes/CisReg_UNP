@@ -2,6 +2,7 @@
 using CisReg_Website.Models;
 using Newtonsoft.Json;
 using CisReg_Website.Data;
+using MongoDB.Bson;
 
 namespace CisReg_Website.Controllers
 {
@@ -43,11 +44,23 @@ namespace CisReg_Website.Controllers
             if (ModelState.IsValid)
             {
                 TempData["ProfessionalInfo"] = JsonConvert.SerializeObject(combinedModel);
+
+                if (combinedModel.Id == ObjectId.Empty)
+                {
+                    combinedModel.Id = ObjectId.GenerateNewId();
+                }
+
                 Database.GetInstance().Insert("profissional", combinedModel);
                 return RedirectToAction("Index", "Login");
             }
 
-            return View(); 
+            return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
         }
 
     }

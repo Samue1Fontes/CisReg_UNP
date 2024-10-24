@@ -27,7 +27,7 @@
 
     <!-- Formulário de Login -->
     <div class="z-10 custom-sm:w-394-px custom-sm:h-auto w-360-px rounded-lg-border bg-customGrey-light shadow-login flex flex-col justify-center items-center custom-lg:mr-36">
-        <form method="post" class="register-personal-info-form p-4" autocomplete="off">
+        <form method="post" asp-action="Submit" asp-controller="ProfessionalInfo" class="register-personal-info-form p-4" autocomplete="off">
 
             @Html.AntiForgeryToken()
 
