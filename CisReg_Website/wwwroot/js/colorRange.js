@@ -24,19 +24,29 @@ function getBackgroundColor(rangeValue) {
 const rangeBackground = document.getElementById('rangeBackground');
 const mainContainer = document.getElementById('mainContainer');
 
-function renderizeRange() {
+function renderizeElements() {
     const actualPageWidth = window.innerWidth;
+    const moonIcon = document.getElementById('moonIcon');
     const colorRange = document.getElementById('colorRange');
+    const sunIcon = document.getElementById('sunIcon');
     const initialRangeValue = getRangeValue();
 
     mainContainer.style.backgroundColor = getBackgroundColor(initialRangeValue);
 
     if (actualPageWidth <= 1300) {
-        if (colorRange) {
+        if (moonIcon && colorRange && sunIcon) {
+            moonIcon.remove();
             colorRange.remove();
+            sunIcon.remove();
+
         }
     } else {
-        if (!colorRange) {
+        if (!moonIcon && !colorRange && !sunIcon) {
+
+            const newMoonIcon = document.createElement(`i`)
+            newMoonIcon.id = 'moonIcon';
+            newMoonIcon.classList.add('fa-solid', 'fa-moon', 'fa-xl', 'mr-2');
+            newMoonIcon.style.color = '';
 
             const newColorRange = document.createElement(`input`);
             newColorRange.id = 'colorRange';
@@ -46,7 +56,15 @@ function renderizeRange() {
             newColorRange.value = getRangeValue();
             newColorRange.classList.add('w-full', 'range', 'range-xs');
 
+            const newSunIcon = document.createElement(`i`)
+            newSunIcon.id = 'sunIcon';
+            newSunIcon.classList.add('fa-solid', 'fa-sun', 'fa-xl', 'ml-2');
+            newSunIcon.style.color = '';
+
+            rangeBackground.appendChild(newMoonIcon);
             rangeBackground.appendChild(newColorRange);
+            rangeBackground.appendChild(newSunIcon);
+
             addColorRangeListener(newColorRange);
         } else {
             colorRange.value = initialRangeValue;
@@ -101,9 +119,9 @@ if (colorRange) {
 }
 
 
-window.addEventListener('resize', renderizeRange);
+window.addEventListener('resize', renderizeElements);
 
 window.onload = function () {
-    renderizeRange();
+    renderizeElements();
     requestAnimationFrame(changeBackgroundColor);
 };
