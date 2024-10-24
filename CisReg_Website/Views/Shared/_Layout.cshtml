@@ -8,17 +8,37 @@
     <link rel="stylesheet" href="~/css/tailwind.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>@ViewData["Title"]</title>
 </head>
 
 <body>
-    <div>
-        @RenderBody()
-    </div>
+    @if (ViewContext.RouteData.Values["controller"]?.ToString() == "Login")
+    {
+        <div>
+            @RenderBody()
+        </div>
+    }
+    else
+    {
+        <div class="flex flex-col md:flex-row">
+            <div
+                class="bg-customGreen-dark w-full h-20 flex justify-end p-6 md:text-sm md:w-20 md:h-screen md:flex-col md:items-center md:justify-start">
+                <div class="drawer-content">
+                    <label for="my-drawer" class="btn btn-ghost drawer-button">
+                        <i class="fa-solid fa-bars text-3xl text-white"></i>
+                    </label>
+                </div>
+            </div>
 
+            @RenderBody()
+        </div>
+    }
 
+    <partial name="_Sidebar" />
 </body>
 
 </html>

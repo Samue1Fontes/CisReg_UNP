@@ -1,0 +1,20 @@
+<div class="drawer">
+  <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-side">
+    <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+    <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4 flex flex-col">
+      <li class="mb-6">
+        <a asp-controller="Home" asp-action="Index">
+          <img src="~/lib/images/logo-unp.svg" />
+        </a>
+      </li>
+
+      <li><a asp-Controller="User"><i class="fa-solid fa-user-nurse"></i>Profissionais</a></li>
+      <li><a asp-Controller="User"><i class="fa-solid fa-user"></i>Pacientes</a></li>
+      <li><a><i class="fa-solid fa-building-columns"></i></i>Prefeituras</a></li>
+      <li><a><i class="fa-solid fa-user-tie"></i></i>Admins</a></li>
+      <li><a><i class="fa-regular fa-calendar"></i>Horários disponíveis</a></li>
+      <li><a><i class="fa-solid fa-calendar"></i>Agendamentos</a></li>
+    </ul>
+  </div>
+</div>

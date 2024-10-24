@@ -1,0 +1,30 @@
+@{
+  ViewData["Title"] = "Página Inicial";
+}
+
+<div class="p-12 w-full h-full">
+  <h1 class="text-3xl mb-20">Bem vindo a Home!</h1>
+
+  <div
+    class="grid grid-cols-[repeat(auto-fit,minmax(100px,1fr))] md:grid-cols-[repeat(auto-fit,minmax(100px,200px))] w-full h-full gap-2 md:gap-10">
+    <a asp-controller="User" asp-action="Index"
+      class="bg-customGreen-default rounded-md hover:shadow-lg transition-all text-white aspect-1 gap-2 text-center flex flex-col items-center justify-center">
+      <i class="fa-solid fa-user-nurse"></i>Profissionais</a>
+
+    <a
+      class="bg-customGreen-default rounded-md hover:shadow-lg transition-all text-white aspect-1 gap-2 text-center flex flex-col items-center justify-center"><i
+        class="fa-solid fa-user"></i>Pacientes</a>
+    <a
+      class="bg-customGreen-default rounded-md hover:shadow-lg transition-all text-white aspect-1 gap-2 text-center flex flex-col items-center justify-center"><i
+        class="fa-solid fa-building-columns"></i></i>Prefeituras </a>
+    <a
+      class="bg-customGreen-default rounded-md hover:shadow-lg transition-all text-white aspect-1 gap-2 text-center flex flex-col items-center justify-center"><i
+        class="fa-solid fa-user-tie"></i></i>Admins</a>
+    <a
+      class="bg-customGreen-default rounded-md hover:shadow-lg transition-all text-white aspect-1 gap-2 text-center flex flex-col items-center justify-center"><i
+        class="fa-regular fa-calendar"></i>Horários disponíveis</a>
+    <a
+      class="bg-customGreen-default rounded-md hover:shadow-lg transition-all text-white aspect-1 gap-2 text-center flex flex-col items-center justify-center"><i
+        class="fa-solid fa-calendar"></i>Agendamentos</a>
+  </div>
+</div>
