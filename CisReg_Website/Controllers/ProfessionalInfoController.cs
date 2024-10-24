@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CisReg_Website.Models;
 using Newtonsoft.Json;
+using CisReg_Website.Data;
 
 namespace CisReg_Website.Controllers
 {
@@ -42,6 +43,7 @@ namespace CisReg_Website.Controllers
             if (ModelState.IsValid)
             {
                 TempData["ProfessionalInfo"] = JsonConvert.SerializeObject(combinedModel);
+                Database.GetInstance().Insert("profissional", combinedModel);
                 return RedirectToAction("Index", "Login");
             }
 
