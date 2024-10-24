@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CisReg_Website.Data;
+using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 
 namespace CisReg_Website.Models
 {
 
-    public class CombinedInfoModel
+    public class CombinedInfoModel : DataFoundation
     {
         // Dados Pessoais
         public string CompleteName { get; set; } = string.Empty;

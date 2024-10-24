@@ -29,19 +29,21 @@ namespace CisReg_Website.Data
             client = new MongoClient(connectionString);
             database = client.GetDatabase("cisreg");
 
-            /*
-            TODO:
-            Criar o mapeamneto de classes para o driver do mongodb reconhecer os objetos e suas respectivas classes
-            alem de realizar a construção e leitura de cada propriedade
+            // Mapeamento de classes
 
-            BsonClassMap.RegisterClassMap<Classe>(map => {
-                map.AutoMap();
-                map.MapCreator(c => new Classe(...));
-            });
-            */
             BsonClassMap.RegisterClassMap<ProfessionalInfoModel>(map => {
                 map.AutoMap();
                 map.MapCreator(c => new ProfessionalInfoModel());
+            });
+
+            BsonClassMap.RegisterClassMap<UserModel>(map => {
+                map.AutoMap();
+                map.MapCreator(c => new UserModel());
+            });
+
+            BsonClassMap.RegisterClassMap<PersonalInfoModel>(map => {
+                map.AutoMap();
+                map.MapCreator(c => new PersonalInfoModel());
             });
         }
 
