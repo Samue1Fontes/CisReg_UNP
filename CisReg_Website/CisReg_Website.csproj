@@ -30,6 +30,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.5" />
     <PackageReference Include="MongoDB.Bson" Version="3.0.0" />
+    <PackageReference Include="MongoDB.Driver" Version="3.0.0" />
     <PackageReference Include="MongoDB.EntityFrameworkCore" Version="8.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>

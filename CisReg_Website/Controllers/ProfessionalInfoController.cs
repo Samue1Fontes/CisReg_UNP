@@ -29,12 +29,32 @@ namespace CisReg_Website.Controllers
             return View("~/Views/Registration/ProfessionalInfo.cshtml");
         }
 
+        public class ObjectIdConverter : JsonConverter<ObjectId>
+        {
+            public override ObjectId ReadJson(JsonReader reader, Type objectType, ObjectId existingValue, bool hasExistingValue, JsonSerializer serializer)
+            {
+                var objectIdString = reader.Value as string;
+                return string.IsNullOrEmpty(objectIdString) ? ObjectId.Empty : new ObjectId(objectIdString);
+            }
+
+            public override void WriteJson(JsonWriter writer, ObjectId value, JsonSerializer serializer)
+            {
+                writer.WriteValue(value.ToString());
+            }
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Submit(ProfessionalInfoModel model)
         {
             var modelJson = TempData["CombinedInfo"] as string;
-            var combinedModel = string.IsNullOrEmpty(modelJson) ? new CombinedInfoModel() : JsonConvert.DeserializeObject<CombinedInfoModel>(modelJson);
+
+            var settings = new JsonSerializerSettings();
+            settings.Converters.Add(new ObjectIdConverter());
+
+            var combinedModel = string.IsNullOrEmpty(modelJson)
+                ? new CombinedInfoModel()
+                : JsonConvert.DeserializeObject<CombinedInfoModel>(modelJson, settings);
 
             combinedModel.registrationNumber = model.registrationNumber;
             combinedModel.academicTraining = model.academicTraining;

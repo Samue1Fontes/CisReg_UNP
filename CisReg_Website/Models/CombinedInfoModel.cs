@@ -28,7 +28,7 @@ namespace CisReg_Website.Models
         public string Password { get; set; } = string.Empty;
 
         // Dados Profissionais
-        [BsonRepresentation(BsonType.Int32)]
+        [BsonRepresentation(BsonType.String)]
         public string registrationNumber { get; set; } = string.Empty;
 
         [BsonRepresentation(BsonType.String)]
