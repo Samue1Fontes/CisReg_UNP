@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Login"; 
 }
 
@@ -10,60 +9,66 @@
 </style>
 
 <!-- Container flexível para centralização -->
-<div class="relative min-h-screen flex items-center custom-lg:justify-end justify-center bg-customGrey-light">
+<div id="mainContainer" class="relative flex min-h-screen items-center custom-lg:justify-end justify-center bg-customGrey-light">
 
     <!-- Primeiro círculo -->
-    <div class="custom-lg:w-61-rem custom-lg:h-61-rem custom-lg:left-minus-133-px w-125-rem h-125-rem bg-green-gradient rounded-full aspect-circle fixed top-minus-323-px"></div>
-
+    <div class="fixed custom-lg:w-61-rem custom-lg:h-61-rem custom-lg:left-minus-133-px w-125-rem h-125-rem bg-green-gradient rounded-full aspect-circle top-minus-323-px"></div>
 
     <!-- UNP Logo -->
-    <div class="custom-sm:bottom-50-px custom-sm:left-150-px custom-sm:z-10 fixed">
+    <div class="fixed custom-sm:bottom-50-px custom-sm:left-150-px custom-sm:z-10">
         <img src="~/lib/images/logo-unp.svg" class="scale-200" />
     </div>
 
     <!-- Segundo círculo -->
-    <div class="custom-lg:w-61-rem custom-lg:h-61-rem custom-lg:left-minus-267-px w-125-rem h-125-rem bg-green-gradient rounded-full aspect-circle fixed top-294-px"></div>
+    <div class="fixed custom-lg:w-61-rem custom-lg:h-61-rem custom-lg:left-minus-267-px w-125-rem h-125-rem bg-green-gradient rounded-full aspect-circle top-294-px"></div>
+
+    <!-- Background Color Range -->
+    <div id="rangeBackground" class="fixed flex w-32 items-center custom-lg:mr-5 custom-lg:bottom-10-px">
+        <i id="moonIcon" class="fa-solid fa-moon fa-xl mr-2" style="color: #000000"></i>
+        <input id="colorRange" type="range" min="0" max="100" value="100" class="w-full range range-xs" />
+        <i id="sunIcon" class="fa-solid fa-sun fa-xl ml-2" style="color: #000000"></i>
+    </div>
 
     <!-- Formulário de Login -->
-    <div class="z-10 custom-sm:w-394-px custom-sm:h-474-px w-360-px rounded-lg-border bg-customGrey-light shadow-login flex flex-col justify-center items-center custom-lg:mr-36">
+    <div class="flex flex-col custom-sm:w-394-px custom-sm:h-474-px w-360-px custom-lg:mr-36 rounded-lg-border bg-customGrey-light shadow-login justify-center items-center z-10">
         <form method="post" class="login-form p-4" autocomplete="off">
 
             <!-- Título "Login" -->
             <div class="relative">
-                <h3 class="w-5-rem text-customGreen-light text-center font-poppins font-bold text-4x1 leading-normal absolute left-1/2 transform -translate-x-1/2 top-26-px">Login</h3>
+                <h3 class="absolute w-5-rem left-1/2 transform -translate-x-1/2 top-26-px text-customGreen-light text-center font-poppins font-bold text-4x1 leading-normal">Login</h3>
             </div>
 
             <!-- Campo de E-mail -->
             <div class="relative mt-24 mb-3">
-                <label for="email" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins text-base leading-personalized mb-2 block">E-mail</label>
-                <div class="relative w-full">
+                <label for="email" class="block w-full mb-2 text-customGreen-dark text-left font-poppins text-base leading-personalized">E-mail</label>
+                <div class="relative">
                     <i class="fa-solid fa-envelope absolute left-4 top-1/2 transform -translate-y-1/2 text-customGrey-default"></i>
-                    <input type="email" 
-                           id="email" 
-                           name="email" 
-                           class="input input-accent pl-10 w-full bg-white text-customGrey-default font-poppins text-base leading-4" 
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           class="input input-accent pl-10 w-full bg-white text-customGrey-default font-poppins text-base leading-4"
                            placeholder="Digite seu e-mail"
                            pattern="^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                            oninput="applyEmailFormatAtLogin(this); validateFieldInputAtLogin(this)"
-                           required/>
+                           required />
                 </div>
             </div>
 
             <!-- Campo de Senha -->
             <div class="relative">
-                <label for="password" class="w-360-px h-22-px text-customGreen-dark text-left font-poppins text-base leading-personalized mb-2 block">Senha</label>
-                <div class="relative w-full">
+                <label for="password" class="block w-full mb-2 text-customGreen-dark text-left font-poppins text-base leading-personalized">Senha</label>
+                <div class="relative">
                     <i class="fa-solid fa-lock absolute left-4 top-1/2 transform -translate-y-1/2 text-customGrey-default"></i>
-                    <input type="password" 
-                           id="password" 
-                           name="password" 
-                           class="input input-accent pl-10 pr-12 w-full bg-white text-customGrey-default font-poppins text-base leading-4" 
+                    <input type="password"
+                           id="password"
+                           name="password"
+                           class="input input-accent pl-10 pr-12 w-full bg-white text-customGrey-default font-poppins text-base leading-4"
                            placeholder="Digite sua senha"
-                           pattern="(?=.*[A-Za-z])(?=.*\d)(?=.*[@@$!%*?&])[A-Za-z\d@@$!%*?&]{8,}"
+                           pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@@$!%*?&]{8,}"
                            oninput="validateFieldInputAtLogin(this)"
-                           required/>
-                    <button type="button" 
-                            onclick="togglePasswordVisibility()" 
+                           required />
+                    <button type="button"
+                            onclick="togglePasswordVisibility()"
                             class="absolute right-4 top-1/2 transform -translate-y-1/2">
                         <i class="fa-solid fa-eye text-customGrey-default" id="toggle-icon"></i>
                     </button>
@@ -71,18 +76,18 @@
             </div>
 
             <!-- Contêiner para o checkbox e link -->
-            <div class="relative flex justify-between items-center mt-1">
-                <label class="cursor-pointer label">
-                    <input type="checkbox" 
-                           id="myCheckbox" 
-                           class="checkbox checkbox-success checkbox-sm checked-border-white  mr-2 ml-1" />
-                    <span for="myCheckbox" class="label-text flex items-center text-customGrey-default font-poppins text-sm leading-personalized">Permanecer logado</span>
+            <div class="flex mt-3 justify-between items-center">
+                <label class="flex items-center cursor-pointer">
+                    <input type="checkbox"
+                           id="myCheckbox"
+                           class="checkbox checkbox-success checkbox-sm checked-border-white mr-1 ml-1" />
+                    <span class="label-text text-customGrey-default font-poppins text-sm leading-personalized">Permanecer logado</span>
                 </label>
-                <a href="/forgot-password" class="mr-2 text-customGreen-dark font-poppins text-sm leading-personalized underline">Esqueceu a Senha?</a>
+                <a href="/forgot-password" class="text-customGreen-dark font-poppins text-sm leading-personalized underline">Esqueceu a Senha?</a>
             </div>
 
             <!-- Botão para efetuar o login -->
-            <div class="relative mt-2">
+            <div class="relative mt-3">
                 <button type="submit" 
                         class="w-full h-entrar-height-px rounded-lg-border bg-customGreen-default hover:bg-onHoverGreen-on_hover_default text-customGrey-light text-center font-poppins text-base leading-personalized">
                     Entrar
@@ -90,7 +95,7 @@
             </div>
 
             <!-- (Design apenas) Novo por aqui? -->
-            <div class="flex items-center justify-center mt-2">
+            <div class="flex mt-2 items-center justify-center">
                 <div class="border-t border-customGrey-default flex-grow"></div>
                 <span class="mx-4 text-customGrey-default font-popins text-sm">Novo por aqui?</span>
                 <div class="border-t border-customGrey-default flex-grow"></div>
@@ -110,3 +115,4 @@
 
 
 <script src="~/js/login.js"></script>
+<script src="~/js/colorRange.js"></script>

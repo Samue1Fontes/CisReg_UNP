@@ -29,7 +29,7 @@ namespace CisReg_Website.Models
 
         // Dados Profissionais
         [BsonRepresentation(BsonType.Int32)]
-        public int registrationNumber { get; set; }
+        public string registrationNumber { get; set; } = string.Empty;
 
         [BsonRepresentation(BsonType.String)]
         public string specialty { get; set; } = string.Empty;

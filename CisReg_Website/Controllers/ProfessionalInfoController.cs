@@ -30,25 +30,24 @@ namespace CisReg_Website.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Submit()
+        public IActionResult Submit(ProfessionalInfoModel model)
         {
             var modelJson = TempData["CombinedInfo"] as string;
             var combinedModel = string.IsNullOrEmpty(modelJson) ? new CombinedInfoModel() : JsonConvert.DeserializeObject<CombinedInfoModel>(modelJson);
 
+            combinedModel.registrationNumber = model.registrationNumber;
+            combinedModel.academicTraining = model.academicTraining;
+            combinedModel.specialty = model.specialty;
+
+
             if (ModelState.IsValid)
             {
-                //Inserindo combinedModel no banco
+                TempData["ProfessionalInfo"] = JsonConvert.SerializeObject(combinedModel);
                 Database.GetInstance().Insert("profissional", combinedModel);
-
-                return RedirectToAction("Sucess");
+                return RedirectToAction("Index", "Login");
             }
 
             return View(); 
-        }
-
-        public IActionResult Success()
-        {
-            return View();
         }
 
     }
