@@ -10,8 +10,8 @@ namespace CisReg_Website.Data
     {
 
         // Propriedade representando o indice no banco
-        [BsonRepresentation(BsonType.Int32)]
-        private int Id { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public ObjectId Id { get; set; }
 
     }
 }

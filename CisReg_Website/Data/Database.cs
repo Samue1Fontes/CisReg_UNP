@@ -31,19 +31,9 @@ namespace CisReg_Website.Data
 
             // Mapeamento de classes
 
-            BsonClassMap.RegisterClassMap<ProfessionalInfoModel>(map => {
+            BsonClassMap.RegisterClassMap<CombinedInfoModel>(map => {
                 map.AutoMap();
-                map.MapCreator(c => new ProfessionalInfoModel());
-            });
-
-            BsonClassMap.RegisterClassMap<UserModel>(map => {
-                map.AutoMap();
-                map.MapCreator(c => new UserModel());
-            });
-
-            BsonClassMap.RegisterClassMap<PersonalInfoModel>(map => {
-                map.AutoMap();
-                map.MapCreator(c => new PersonalInfoModel());
+                map.MapCreator(c => new CombinedInfoModel());
             });
         }
 
