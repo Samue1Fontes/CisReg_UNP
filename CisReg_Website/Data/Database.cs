@@ -1,4 +1,5 @@
 ﻿using CisReg_Website.Models;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 
@@ -55,13 +56,17 @@ namespace CisReg_Website.Data
         /// Implementa a seleção dos dados contidos nos bancos
         /// </summary>
         /// <param name="collectionName">Nome da coleção (tabela) do banco</param>
-        /// <param name="filter">Definição do filtro para o processo de busca</param>
+        /// <param name="filter">Definição do filtro para o processo de busca, deixar nullo para buscar por tudo</param>
         /// <returns>Retorna uma lista dos objetos encontrados no banco se não o retorno é nulo</returns>
-        public List<DataFoundation>? Select(string collectionName, FilterDefinition<DataFoundation> filter)
+        public List<DataFoundation>? Select(string collectionName, FilterDefinition<DataFoundation>? filter)
         {
             try
             {
                 var collection = database.GetCollection<DataFoundation>(collectionName);
+                if (collection == null)
+                {
+                    return collection.FindAsync(new BsonDocument()).Result.ToList();
+                }
                 return collection.FindAsync(filter).Result.ToList<DataFoundation>();
             }
             catch (Exception ex)
