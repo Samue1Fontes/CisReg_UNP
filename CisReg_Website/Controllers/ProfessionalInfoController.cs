@@ -26,8 +26,12 @@ namespace CisReg_Website.Controllers
 
             TempData["CombinedInfo"] = JsonConvert.SerializeObject(combinedModel);
 
-            var especialidades = Database.GetInstance().Select("formação", null);
-            
+            var formacao = Database.GetInstance().Select("formação", null);
+            var especialidade = Database.GetInstance().Select("especialidade", null);
+
+            ViewBag.Formacao = formacao;
+            ViewBag.Especialidade = especialidade;
+
             return View("~/Views/Registration/ProfessionalInfo.cshtml");
         }
 
