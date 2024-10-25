@@ -26,6 +26,8 @@ namespace CisReg_Website.Controllers
 
             TempData["CombinedInfo"] = JsonConvert.SerializeObject(combinedModel);
 
+            // Database.GetInstance().Select("", "");
+
             return View("~/Views/Registration/ProfessionalInfo.cshtml");
         }
 
