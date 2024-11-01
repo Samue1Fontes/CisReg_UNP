@@ -12,6 +12,8 @@ public class UserModel : DataFoundation
 
   [BsonElement("email")]
   public string? Email { get; set; }
+    [BsonElement("password")]
+    public string? Password { get; set; }
 
     [BsonElement("adminPassword")]
     public string? AdminPassword { get; set; }
