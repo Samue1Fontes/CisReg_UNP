@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    setTimeout(fadeAlert, 2000);
+    setTimeout(fadeAlert, 4000);
 
 });
 
