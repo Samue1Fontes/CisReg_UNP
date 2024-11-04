@@ -20,10 +20,6 @@ public class UserModel
     [Display(Name = "Sobrenome")]
     public string? LastName { get; set; }
 
-    [BsonElement("email")]
-    [Display(Name = "Email")]
-    public string? Email { get; set; }
-
   [BsonElement("password")]
     [Display(Name = "Senha")]
     public string? Password { get; set; }
