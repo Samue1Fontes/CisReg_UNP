@@ -19,7 +19,7 @@ namespace CisReg_Website.Controllers
             }
             else if (SelectedRegistrationType == "UsuarioUNP")
             {
-                return RedirectToAction("Index", "User");
+                return RedirectToAction("Create", "User");
             }
 
             return View();
