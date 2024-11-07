@@ -48,7 +48,7 @@ namespace CisReg_Website.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Email")] UserModel userModel)
+        public async Task<IActionResult> Create([Bind("Id,FirstName, LastName,Email,Password")] UserModel userModel)
         {
             if (ModelState.IsValid)
             {
@@ -76,7 +76,7 @@ namespace CisReg_Website.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(ObjectId id, [Bind("Id,Name,Email")] UserModel userModel)
+        public async Task<IActionResult> Edit(ObjectId id, [Bind("Id,FirstName, LastName,Email,Password")] UserModel userModel)
         {
             if (id != userModel.Id)
             {

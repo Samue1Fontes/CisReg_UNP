@@ -13,6 +13,7 @@ namespace CisReg_Website.Data
 
         // String de conexão com o cluster do projeto armazenado no serviço do mongodb
         private const string connectionString = "mongodb+srv://root:admin@cisreg.kzr70.mongodb.net/?retryWrites=true&w=majority&appName=CisReg";
+        //mongodb+srv://root:admin@cisreg.kzr70.mongodb.net/?retryWrites=true&w=majority&appName=CisReg
         // Instância do singleton
         private static Database? instance;
 
