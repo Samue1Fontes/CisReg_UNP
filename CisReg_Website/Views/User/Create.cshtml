@@ -4,8 +4,12 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<div id="mainContainer" class="relative flex min-h-screen items-center custom-lg:justify-end bg-customGrey-light">
+    
+    
+        <div class="fixed custom-lg:w-61-rem custom-lg:h-61-rem custom-lg:left-minus-133-px w-125-rem h-125-rem bg-green-gradient rounded-full aspect-circle top-minus-323-px"></div>
 
+<<<<<<< HEAD
 <h4>UserModel</h4>
 <hr />
 <div class="row">
@@ -39,9 +43,60 @@
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
-    </div>
-</div>
+=======
+        <div class="fixed custom-sm:bottom-50-px custom-sm:left-150-px custom-sm:z-20">
+                <img src="~/lib/images/logo-unp.svg" class="scale-200" />
+        </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+        <div class="fixed custom-lg:w-61-rem custom-lg:h-61-rem custom-lg\:left-minus-267-px w-125-rem h-125-rem bg-green-gradient rounded-full aspect-circle top-294-px"></div>
+
+    <div class="z-10 custom-sm:w-394-px custom-sm:h-auto w-360-px rounded-lg-border bg-customGrey-light shadow-login flex flex-col justify-center items-center custom-lg:mr-36">
+
+        <form asp-action="Create" class="register-unp-user-form p-4">
+
+                    <div class="mb-4">
+                        <h3 class="text-customGreen-light text-center font-poppins font-bold text-4x1 leading-normal">Cadastro usuario UNP</h3>
+                    </div>
+
+                
+                    <!-- Campo Name -->
+                    <div class="form-group mb-2">
+                        <label asp-for="FirstName" class="control-label w-full h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block"></label>
+                        <div class="relative">
+                            <input asp-for="FirstName" class="form-control custom-input w-full h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" />
+                            <span asp-validation-for="FirstName" class="text-danger hidden text-customRed-default text-left font-poppins font-normal text-xs leading-personalized hidden"></span>
+                        </div>
+                    </div>
+
+                    <!-- Campo Last Name -->
+                    <div class="form-group mb-2">
+                        <label asp-for="LastName" class="control-label w-full h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block"></label>
+                            <div class="relative">
+                                <input asp-for="LastName" class="form-control custom-input w-full h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" />
+                                <span asp-validation-for="LastName" class="text-danger hidden text-customRed-default text-left font-poppins font-normal text-xs leading-personalized hidden"></span>
+                            </div>
+                    </div>
+
+                    <div class="form-group mb-2">
+                        <label asp-for="Email" class="control-label w-full h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block"></label>
+                            <div class="relative">
+                            <input asp-for="Email" class="form-control custom-input w-full h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" />
+                            <span asp-validation-for="Email" class="text-danger hidden text-customRed-default text-left font-poppins font-normal text-xs leading-personalized hidden"></span>
+                            </div>
+                    </div>
+
+                     <div class="form-group mb-2">
+                            <label asp-for="Password" class="control-label w-full h-22-px text-customGreen-dark text-left font-poppins font-normal text-base leading-personalized mb-2 block"></label>
+                                <div class="relative">
+                                <input asp-for="Password" class="form-control custom-input w-full h-40-px bg-white text-customGrey-default font-poppins font-normal text-base leading-4" />
+                                <span asp-validation-for="Password" class="text-danger hidden text-customRed-default text-left font-poppins font-normal text-xs leading-personalized hidden"></span>
+                                </div>
+                     </div>
+                    <div class="justify-end">
+                        <button type="submit" class="btn btn-primary h-entrar-height-px rounded-lg-border bg-customGreen-default hover:bg-onHoverGreen-on_hover_default text-customGrey-light text-center font-poppins font-normal text-base leading-personalized">Cadastrar </button>
+                    </div>
+                </form>
+        
+>>>>>>> 5b2205fd609e26be1e9568d7c73b82f8c1d84e90
+    </div>
 </div>

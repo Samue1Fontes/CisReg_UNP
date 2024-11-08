@@ -2657,6 +2657,10 @@ html:has(.drawer-toggle:checked) {
   height: 100%;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .min-h-full {
   min-height: 100%;
 }
@@ -2785,6 +2789,10 @@ html:has(.drawer-toggle:checked) {
   justify-content: space-between;
 }
 
+.gap-10 {
+  gap: 2.5rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
 }
@@ -2911,6 +2919,10 @@ html:has(.drawer-toggle:checked) {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-28 {
+  padding: 7rem;
 }
 
 .p-4 {

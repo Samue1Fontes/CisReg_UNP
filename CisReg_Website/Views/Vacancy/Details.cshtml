@@ -1,0 +1,54 @@
+@model CisReg_Website.Models.VacancyModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>VacancyModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AvailableHour)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AvailableHour)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PatientId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PatientId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProfessionalId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProfessionalId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReservedById)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReservedById)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreatedById)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatedById)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

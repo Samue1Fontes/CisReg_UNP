@@ -1,0 +1,68 @@
+@model IEnumerable<CisReg_Website.Models.VacancyModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="flex flex-col gap-10 p-28 h-screen">
+    <h1 class="text-3xl">Listagem de reservas</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Nova Reserva</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AvailableHour)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PatientId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfessionalId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReservedById)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedById)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AvailableHour)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PatientId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProfessionalId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReservedById)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedById)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
