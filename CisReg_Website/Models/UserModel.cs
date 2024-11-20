@@ -55,7 +55,9 @@ public class UserModel
   [DisplayName("Permissão")]
   [BsonRepresentation(BsonType.String)]
   public Permissions? Permission { get; set; }
-
+    public UserModel()
+    {
+    }
 }
 
 public class Patient : UserModel
