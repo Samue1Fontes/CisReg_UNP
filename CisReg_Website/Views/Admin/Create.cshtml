@@ -1,0 +1,67 @@
+﻿@model CisReg_Website.Models.UserHall
+
+@{
+    ViewData["Title"] = "Cadastrar usuário da prefeitura";
+}
+
+<!-- Contêiner que ocupa toda a altura da tela para centralizar -->
+<div class="flex flex-col justify-center items-center min-h-screen w-full bg-white">
+    <div class="custom-sm:w-394-px custom-sm:h-auto w-360-px custom-lg:mr-36 rounded-lg-border bg-white shadow-lg p-6">
+        <form asp-action="Create" class="w-full max-w-md">
+            <div class="form-group">
+                <h1 class="text-xl font-bold mb-4 text-center">Cadastro de Usuário</h1>
+            </div>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="HallModel" class="control-label"></label>
+                <input asp-for="HallModel" class="form-control" />
+                <span asp-validation-for="HallModel" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" onkeypress="mask(this)" onblur="mask(this)" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" type="password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Permission" class="control-label"></label>
+                <input asp-for="Permission" class="form-control" />
+                <span asp-validation-for="Permission" class="text-danger"></span>
+            </div>
+
+            <div class="form-group d-flex justify-content-between gap-3" style="margin-top: 20px;">
+                <input type="submit" value="Cadastrar" class="btn btn-primary w-48%" />
+                <a asp-action="Index" class="btn btn-secondary w-48%">Voltar à Lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="~/js/phone_mask.js"></script>

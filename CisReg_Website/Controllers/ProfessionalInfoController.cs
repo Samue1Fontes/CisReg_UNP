@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CisReg_Website.Models;
 using Newtonsoft.Json;
-using CisReg_Website.Data;
 using MongoDB.Bson;
 using CisReg_Website.Domain;
 using Microsoft.EntityFrameworkCore;
@@ -34,7 +33,7 @@ namespace CisReg_Website.Controllers
             };
 
             TempData["CombinedInfo"] = JsonConvert.SerializeObject(combinedModel);
-            
+
             var formationsList = _context.Formations.ToList();
             var specialtiesList = _context.Specialties.ToList();
 

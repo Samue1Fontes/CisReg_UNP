@@ -1,6 +1,5 @@
 using CisReg_Website.Domain;
 using CisReg_Website.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +12,8 @@ builder.Services.AddAntiforgery(options =>
 
 builder.Services.AddDbContext<ApplicationDbContext>();
 builder.Services.AddScoped<ProfessionalRepository>();
+builder.Services.AddScoped<PatientRepository>();
+builder.Services.AddScoped<VacancyRepository>();
 
 var app = builder.Build();
 

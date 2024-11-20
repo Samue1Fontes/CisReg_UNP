@@ -1,7 +1,7 @@
-@model CisReg_Website.Models.VacancyModel
+@model CisReg_Website.Models.Vacancy.VacancyModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Disponibilize um horário";
 }
 
 <div class="flex flex-col p-28 w-full gap-10">
@@ -17,16 +17,6 @@
                     <label asp-for="AvailableHour" class="control-label"></label>
                     <input asp-for="AvailableHour" class="form-control" />
                     <span asp-validation-for="AvailableHour" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="PatientId" class="control-label"></label>
-                    <input asp-for="PatientId" class="form-control" />
-                    <span asp-validation-for="PatientId" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ProfessionalId" class="control-label"></label>
-                    <input asp-for="ProfessionalId" class="form-control" />
-                    <span asp-validation-for="ProfessionalId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Create" class="btn btn-primary" />

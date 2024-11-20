@@ -2,7 +2,7 @@ using System.ComponentModel;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace CisReg_Website.Models;
+namespace CisReg_Website.Models.Vacancy ;
 
 public enum Status
 {

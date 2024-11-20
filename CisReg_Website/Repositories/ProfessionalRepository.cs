@@ -11,4 +11,14 @@ public class ProfessionalRepository(ApplicationDbContext context)
   {
     return [.. _context.Professionals.Where(u => u.Permission == Permissions.Professional)];
   }
+
+  public IEnumerable<string> GetAllSpecialties()
+  {
+    return [.. _context.Professionals
+    .Where(u => u.Permission == Permissions.Professional)
+    .Select(u => u.Specialty)
+    .Where(s => !string.IsNullOrEmpty(s))
+    .Distinct()
+    .Select(s => s!)];
+  }
 }

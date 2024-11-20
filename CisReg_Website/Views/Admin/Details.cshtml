@@ -1,0 +1,63 @@
+﻿@model CisReg_Website.Models.UserHall
+
+@{
+    ViewData["Title"] = "Detalhes de usuário";
+}
+
+<!-- Contêiner que ocupa toda a altura da tela para centralizar -->
+<div class="flex flex-col justify-center items-center min-h-screen w-full bg-white">
+    <div class="custom-sm:w-394-px custom-sm:h-auto w-360-px custom-lg:mr-36 rounded-lg-border bg-white shadow-lg p-6">
+        
+        <h4>Usuário da prefeitura</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.HallModel)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.HallModel)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Password)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Password)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Permission)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Permission)
+            </dd>
+        </dl>
+
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+            <a asp-action="Index">Voltar a lista</a>
+        </div>
+    </div>
+</div>

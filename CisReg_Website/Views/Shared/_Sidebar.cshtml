@@ -11,11 +11,13 @@
 
       <li><a asp-Controller="Professional" asp-action="Index"><i class="fa-solid fa-user-nurse"></i>Profissionais</a>
       </li>
-      <li><a asp-Controller="User"><i class="fa-solid fa-user"></i>Pacientes</a></li>
+      <li><a asp-Controller="Patient" asp-action="Index"><i class="fa-solid fa-user"></i>Pacientes</a></li>
       <li><a><i class="fa-solid fa-building-columns"></i></i>Prefeituras</a></li>
       <li><a><i class="fa-solid fa-user-tie"></i></i>Admins</a></li>
-      <li><a><i class="fa-regular fa-calendar"></i>Horários disponíveis</a></li>
-      <li><a><i class="fa-solid fa-calendar"></i>Agendamentos</a></li>
+      <li><a asp-controller="Vacancy" asp-action="Index"><i class="fa-regular fa-calendar"></i>Horários disponíveis</a>
+      </li>
+      <li><a asp-controller="Vacancy" asp-action="SchedulesMade"><i class="fa-solid fa-calendar"></i>Agendamentos</a>
+      </li>
     </ul>
   </div>
 </div>
