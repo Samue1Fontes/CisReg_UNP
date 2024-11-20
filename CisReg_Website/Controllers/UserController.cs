@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using CisReg_Website.Domain;
 using MongoDB.Bson;
+using CisReg_Website.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CisReg_Website.Controllers
 {
@@ -13,7 +15,7 @@ namespace CisReg_Website.Controllers
             _context = context;
         }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
         // GET: User
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -89,9 +91,9 @@ namespace CisReg_Website.Controllers
                     _context.Update(userModel);
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (DbUpdateConcurrencyException e)
                 {
-                    if (!UserModelExists(userModel.Id))
+                    if (!UserModelExists(userModel.Id))// errro aqui
                     {
                         return NotFound();
                     }
@@ -134,8 +136,7 @@ namespace CisReg_Website.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-=======
->>>>>>> 5b2205fd609e26be1e9568d7c73b82f8c1d84e90
+//=======>>>>>>> 5b2205fd609e26be1e9568d7c73b82f8c1d84e90
         public IActionResult SchedulesMade()
         {
             return View();

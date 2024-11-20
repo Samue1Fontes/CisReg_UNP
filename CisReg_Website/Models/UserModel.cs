@@ -140,5 +140,5 @@ public class SupHall : UserHall, IVacancyCreator
 
 public class Admin : UserModel, IVacancyReserver, IVacancyCreator
 {
->>>>>>> 5b2205fd609e26be1e9568d7c73b82f8c1d84e90
+//>>>>>>> 5b2205fd609e26be1e9568d7c73b82f8c1d84e90
 }
