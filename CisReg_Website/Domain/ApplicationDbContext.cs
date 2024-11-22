@@ -43,4 +43,6 @@ public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options
 
 public DbSet<CisReg_Website.Models.UserHall> UserHall { get; set; } = default!;
 
+public DbSet<CisReg_Website.Models.UnpSupModel> UnpSupModel { get; set; } = default!;
+
 }

@@ -24,36 +24,29 @@ public enum Permissions
 
 public class UserModel
 {
-  [BsonId]
-  public ObjectId Id { get; set; }
+    [BsonId]
+    public ObjectId Id { get; set; }
 
-
-    [BsonElement("FirstName")]
-    [Display(Name = "Nome")]
-    public string? FirstName { get; set; }
-
-  [BsonElement("Email")]
-    [Display(Name = "Email")]
-    [System.ComponentModel.DataAnnotations.Required(ErrorMessage ="Campo Email é obrigatório")]
-    [EmailAddress(ErrorMessage = "O campo email deve ter email válido")]
+    [BsonElement("email")]
+    [DisplayName("Email")]
     public string? Email { get; set; }
-  
-    [BsonElement("LastName")]
-    [Display(Name = "Sobrenome")]
-    public string? LastName { get; set; }
 
-  [BsonElement("Password")]
-    [Display(Name = "Senha")]
-    [System.ComponentModel.DataAnnotations.Required(ErrorMessage ="O campo senha é obrigatorio")]
-    [StringLength(14, MinimumLength = 6, ErrorMessage ="A senha deve ter entre 6 a 14 caracteres")]
+    [BsonElement("password")]
+    [DisplayName("Senha")]
     public string? Password { get; set; }
 
+    [BsonElement("first_name")]
+    [DisplayName("Nome")]
+    public string? FirstName { get; set; }
 
+    [BsonElement("last_name")]
+    [DisplayName("Sobrenome")]
+    public string? LastName { get; set; }
 
-  [BsonElement("permission")]
-  [DisplayName("PermissÃ£o")]
-  [BsonRepresentation(BsonType.String)]
-  public Permissions? Permission { get; set; }
+    [BsonElement("permission")]
+    [DisplayName("Permissão")]
+    [BsonRepresentation(BsonType.String)]
+    public Permissions? Permission { get; set; }
     public UserModel()
     {
     }
@@ -132,6 +125,14 @@ public class UserHall : UserModel
 
 public class SupUnp : UserModel, IVacancyReserver, IVacancyCreator
 {
+    [BsonElement("employee_number")]
+    [DisplayName("Número do Funcionário")]
+    public string? EmployeeNumber { get; set; }
+
+    [BsonElement("supervisor")]
+    [DisplayName("Supervisor")]
+    public string? Supervisor { get; set; }
+
 }
 
 public class SupHall : UserHall, IVacancyCreator
@@ -140,5 +141,5 @@ public class SupHall : UserHall, IVacancyCreator
 
 public class Admin : UserModel, IVacancyReserver, IVacancyCreator
 {
-//>>>>>>> 5b2205fd609e26be1e9568d7c73b82f8c1d84e90
+
 }
