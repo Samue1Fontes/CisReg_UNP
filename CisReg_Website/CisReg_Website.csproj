@@ -41,4 +41,11 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\lib\Schudele\css\.DS_Store" />
+    <None Include="wwwroot\lib\Schudele\css\bootstrap\.DS_Store" />
+    <None Include="wwwroot\lib\Schudele\css\bootstrap\mixins\.DS_Store" />
+    <None Include="wwwroot\lib\Schudele\js\.DS_Store" />
+  </ItemGroup>
+
 </Project>
