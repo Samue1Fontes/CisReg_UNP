@@ -11,6 +11,7 @@
         public string? Email { get; set; }
         public string? Senha { get; set; }
         public string? NumeroFuncionario { get; set; }
+
         //public List<Atendimento> HistoricoAtendimentos { get; set; }
         public string? NivelAcesso { get; set; }
     }
