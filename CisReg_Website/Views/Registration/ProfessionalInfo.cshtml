@@ -2,8 +2,9 @@
 @{
     ViewData["Title"] = "Register";
 
-    var viewFormacao = ViewBag.Formacao;
-    var viewEspecialidade = ViewBag.Especialidade;
+    var viewFormations = ViewBag.Formations;
+
+    var viewSpecialties = ViewBag.Specialties;
 }
 
 
@@ -27,6 +28,30 @@
         <input id="colorRange" type="range" min="0" max="100" value="100" class="w-full range range-xs" />
         <i id="sunIcon" class="fa-solid fa-sun fa-xl ml-2" style="color: #000000"></i>
     </div>
+
+    <!-- Error Alert -->
+    @{
+        if (ViewBag.ErrorMessage != null)
+
+
+
+        {
+            <div class="fixed z-20 top-0 mt-4 w-100-px h-auto">
+                <div id="errorAlert" role="alert" class="alert alert-error w-full mx-auto flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="h-6 w-6 shrink-0 stroke-current"
+                         fill="none"
+                         viewBox="0 0 24 24">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>@ViewBag.ErrorMessage</span>
+                </div>
+            </div>
+        }
+    }
 
     <!-- Formulário de Login -->
     <div class="z-10 custom-sm:w-394-px custom-sm:h-auto w-360-px rounded-lg-border bg-customGrey-light shadow-login flex flex-col justify-center items-center custom-lg:mr-36">
@@ -64,9 +89,9 @@
                             class="select select-accent w-full !h-40-px !bg-white !text-customGrey-default !font-poppins !font-normal !text-base"
                             required>
                         <option value="" disabled selected>Selecione uma formação</option>
-                        @foreach (var formacao in viewFormacao)
+                        @foreach (var formacao in viewFormations)
                         {
-                                    <option value="@formacao.GetElement("nome").Value">@formacao.GetElement("nome").Value</option>
+                            <option value="@formacao.Name">@formacao.Name</option>
                         }
                     </select>
                 </div>
@@ -82,9 +107,9 @@
                             class="select select-accent w-full !h-40-px !bg-white !text-customGrey-default !font-poppins !font-normal !text-base"
                             required>
                         <option value="" disabled selected>Selecione uma especialidade</option>
-                        @foreach (var especialidade in viewEspecialidade)
+                        @foreach (var especialidade in viewSpecialties)
                         {
-                                <option value="@especialidade.GetElement("nome").Value">@especialidade.GetElement("nome").Value</option>
+                            <option value="@especialidade.Name">@especialidade.Name</option>
                         }
 
                     </select>
@@ -99,5 +124,5 @@
     </div>
 </div>
 
-<script src="~/js/personal-info.js"></script>
+<script src="~/js/professional-info.js"></script>
 <script src="~/js/colorRange.js"></script>

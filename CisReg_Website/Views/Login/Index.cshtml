@@ -1,4 +1,5 @@
-﻿@{
+﻿@model CisReg_Website.Models.LoginModel
+@{
     ViewData["Title"] = "Login"; 
 }
 
@@ -29,9 +30,31 @@
         <i id="sunIcon" class="fa-solid fa-sun fa-xl ml-2" style="color: #000000"></i>
     </div>
 
+    <!-- Error Alert -->
+    @{
+        if (ViewBag.ErrorMessage != null)
+
+        {
+            <div class="fixed z-20 top-0 mt-4 w-100-px h-auto">
+                <div id="errorAlert" role="alert" class="alert alert-error w-full mx-auto flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="h-6 w-6 shrink-0 stroke-current"
+                         fill="none"
+                         viewBox="0 0 24 24">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>@ViewBag.ErrorMessage</span>
+                </div>
+            </div>
+        }
+    }
+
     <!-- Formulário de Login -->
-    <div class="flex flex-col custom-sm:w-394-px custom-sm:h-474-px w-360-px custom-lg:mr-36 rounded-lg-border bg-customGrey-light shadow-login justify-center items-center z-10">
-        <form method="post" class="login-form p-4" autocomplete="off">
+    <div class="flex flex-col custom-sm:w-394-px custom-sm:h-auto w-360-px custom-lg:mr-36 rounded-lg-border bg-customGrey-light shadow-login justify-center items-center z-10">
+        <form method="post" asp-action="Submit" asp-controller="Login" class="login-form p-4" autocomplete="off">
 
             <!-- Título "Login" -->
             <div class="relative">
@@ -45,7 +68,8 @@
                     <i class="fa-solid fa-envelope absolute left-4 top-1/2 transform -translate-y-1/2 text-customGrey-default"></i>
                     <input type="email"
                            id="email"
-                           name="email"
+                           name="Email"
+                           asp-for="Email"
                            class="input input-accent pl-10 w-full bg-white text-customGrey-default font-poppins text-base leading-4"
                            placeholder="Digite seu e-mail"
                            pattern="^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
@@ -61,7 +85,8 @@
                     <i class="fa-solid fa-lock absolute left-4 top-1/2 transform -translate-y-1/2 text-customGrey-default"></i>
                     <input type="password"
                            id="password"
-                           name="password"
+                           name="Password"
+                           asp-for="Password"
                            class="input input-accent pl-10 pr-12 w-full bg-white text-customGrey-default font-poppins text-base leading-4"
                            placeholder="Digite sua senha"
                            pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@@$!%*?&]{8,}"

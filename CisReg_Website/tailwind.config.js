@@ -66,6 +66,9 @@ module.exports = {
                 // Campos de Seleção (Radio)
                 '321-px': '321px',
 
+                // Error Alert
+                '100-px': '300px',
+
             },
 
             height: {

@@ -13,11 +13,13 @@ namespace CisReg_Website.Controllers
         [HttpPost]
         public IActionResult Index(string SelectedRegistrationType)
         {
-
             if (SelectedRegistrationType == "ProfissionalDeSaude")
             {
-
                 return RedirectToAction("PersonalInfo");
+            }
+            else if (SelectedRegistrationType == "UsuarioUNP")
+            {
+                return RedirectToAction("Index", "UnpSup");
             }
 
             return View();
@@ -26,8 +28,8 @@ namespace CisReg_Website.Controllers
         [HttpGet]
         public IActionResult PersonalInfo()
         {
-
             return View();
         }
+
     }
 }

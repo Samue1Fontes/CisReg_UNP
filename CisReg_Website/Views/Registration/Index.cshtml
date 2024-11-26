@@ -47,42 +47,64 @@
     </div>
 
     <!-- Formulário de Cadastro (Tipo de Cadastro) -->
-    <div class="z-10 custom-sm:w-394-px custom-sm:h-474-px w-360-px rounded-lg-border bg-customGrey-light shadow-login flex flex-col justify-center items-center custom-lg:mr-36">
-        <form method="post" class="registration-type-form p-4" onsubmit="return validateForm()">
+    <div class="flex flex-col custom-sm:w-394-px custom-sm:h-auto w-360-px custom-lg:mr-36 rounded-lg-border bg-customGrey-light shadow-login justify-center items-center z-10">
+        <form method="post" asp-action="Index" asp-controller="Registration" class="registration-type-form p-4">
 
             <!-- Título "Tipo de Cadastro" -->
-            <div class="mb-12 mt-4">
+            <div class="mt-2">
                 <h3 class="text-customGreen-light text-center font-poppins font-bold text-4x1 leading-normal">Tipo de Cadastro</h3>
             </div>
 
             <!-- Opções -->
             <div class="relative">
-                <!-- Opção Prefeitura -->
-                <div class="w-321-px h-44-px border border-customGreen-default rounded-lg-border p-4 flex items-center mb-6">
-                        <label class="label cursor-pointer">
-                            <input type="radio" 
-                                   name="SelectedRegistrationType"
-                                   value="Prefeitura" 
-                                   class="radio radio-sucess checked:bg-success radio-sm mr-2" 
-                                   />
-                            <span class="label-text text-customGreen-default font-poppins text-base leading-normal">Prefeitura</span>
-                        </label>
-                </div>
-
-                <!-- Opção Usuário -->
-                <div class="w-321-px h-44-px border border-customGreen-dark rounded-lg-border p-4 flex items-center mb-6">
+                <!-- Opção Supervisor UNP -->
+                <div class="w-321-px h-44-px border border-customGreen-default rounded-lg-border p-4 flex items-center mt-4">
                         <label class="label cursor-pointer">
                             <input type="radio"
                                    name="SelectedRegistrationType"
-                                   value="Usuario"
-                                    class="radio radio-sucess checked:bg-success radio-sm mr-2"
+                                   value="SuperUNP" 
+                                   class="radio radio-sucess checked:bg-success radio-sm mr-2" 
                                    />
-                            <span class="label-text text-customGreen-default font-poppins text-base leading-normal">Usuário</span>
+                            <span class="label-text text-customGreen-default font-poppins text-base leading-normal">Supervisor UNP</span>
                         </label>
                 </div>
 
+                <!-- Opção Supervisor Prefeitura -->
+                <div class="w-321-px h-44-px border border-customGreen-default rounded-lg-border p-4 flex items-center mt-3">
+                    <label class="label cursor-pointer">
+                        <input type="radio"
+                               name="SelectedRegistrationType"
+                               value="SuperPrefeitura"
+                               class="radio radio-sucess checked:bg-success radio-sm mr-2" />
+                        <span class="label-text text-customGreen-default font-poppins text-base leading-normal">Supervisor Prefeitura</span>
+                    </label>
+                </div>
+
+                <!-- Opção Usuário UNP-->
+                <div class="w-321-px h-44-px border border-customGreen-dark rounded-lg-border p-4 flex items-center mt-3">
+                        <label class="label cursor-pointer">
+                            <input type="radio"
+                               name="SelectedRegistrationType"
+                                   value="UsuarioUNP"
+                                   class="radio radio-sucess checked:bg-success radio-sm mr-2"
+                                   />
+                            <span class="label-text text-customGreen-default font-poppins text-base leading-normal">Usuário UNP</span>
+                        </label>
+                </div>
+
+                <!-- Opção Usuário Prefeitura-->
+                <div class="w-321-px h-44-px border border-customGreen-dark rounded-lg-border p-4 flex items-center mt-3">
+                    <label class="label cursor-pointer">
+                        <input type="radio"
+                               name="SelectedRegistrationType"
+                               value="UsuarioPrefeitura"
+                               class="radio radio-sucess checked:bg-success radio-sm mr-2" />
+                        <span class="label-text text-customGreen-default font-poppins text-base leading-normal">Usuário Prefeitura</span>
+                    </label>
+                </div>
+
                 <!-- Opção Profissional de sáude -->
-                <div class="w-321-px h-44-px border border-customGreen-default rounded-lg-border p-4 flex items-center mb-10">
+                <div class="w-321-px h-44-px border border-customGreen-default rounded-lg-border p-4 flex items-center mt-3">
                         <label class="label cursor-pointer">
                             <input type="radio"
                                    name="SelectedRegistrationType"
@@ -94,7 +116,7 @@
                 </div>
 
                 <!-- Botão que leva a tela de cadastro (PersonalInfo) -->
-                <div class="relative">
+                <div class="relative mt-4">
                     <button type="submit"
                             class="w-full h-entrar-height-px rounded-lg-border bg-customGreen-default hover:bg-onHoverGreen-on_hover_default text-customGrey-light text-center font-poppins font-normal text-base leading-personalized">
                         Prosseguir
@@ -105,6 +127,4 @@
     </div>
 </div>
 
-
-<script src="~/js/registration-type.js"></script>
 <script src="~/js/colorRange.js"></script>

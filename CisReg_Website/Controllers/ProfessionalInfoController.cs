@@ -1,13 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CisReg_Website.Models;
 using Newtonsoft.Json;
-using CisReg_Website.Data;
 using MongoDB.Bson;
+using CisReg_Website.Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace CisReg_Website.Controllers
 {
     public class ProfessionalInfoController : Controller
     {
+        private readonly ApplicationDbContext _context;
+
+        public ProfessionalInfoController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -26,11 +34,11 @@ namespace CisReg_Website.Controllers
 
             TempData["CombinedInfo"] = JsonConvert.SerializeObject(combinedModel);
 
-            var formacao = Database.GetInstance().Select("formação", null);
-            var especialidade = Database.GetInstance().Select("especialidade", null);
+            var formationsList = _context.Formations.ToList();
+            var specialtiesList = _context.Specialties.ToList();
 
-            ViewBag.Formacao = formacao;
-            ViewBag.Especialidade = especialidade;
+            ViewBag.Formations = formationsList;
+            ViewBag.Specialties = specialtiesList;
 
             return View("~/Views/Registration/ProfessionalInfo.cshtml");
         }
@@ -51,7 +59,7 @@ namespace CisReg_Website.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Submit(ProfessionalInfoModel model)
+        public async Task<IActionResult> Submit(ProfessionalInfoModel model)
         {
             var modelJson = TempData["CombinedInfo"] as string;
 
@@ -66,8 +74,12 @@ namespace CisReg_Website.Controllers
             combinedModel.academicTraining = model.academicTraining;
             combinedModel.specialty = model.specialty;
 
-
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+            {
+                ViewBag.ErrorMessage = "Erro no envio...";
+                return View(model);
+            }
+            try
             {
                 TempData["ProfessionalInfo"] = JsonConvert.SerializeObject(combinedModel);
 
@@ -76,8 +88,17 @@ namespace CisReg_Website.Controllers
                     combinedModel.Id = ObjectId.GenerateNewId();
                 }
 
-                Database.GetInstance().Insert("profissional", combinedModel);
+                _context.Add(combinedModel);
+                await _context.SaveChangesAsync();
                 return RedirectToAction("Index", "Login");
+            }
+            catch (DbUpdateException ex)
+            {
+                ViewBag.ErrorMessage = "Erro no envio dos dados...";
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = "Erro inesperado. Tente novamente.";
             }
 
             return View(model);

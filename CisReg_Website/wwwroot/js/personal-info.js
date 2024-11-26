@@ -1,6 +1,28 @@
 ﻿
 // Views - Registration - PersonalInfo.cshtml
 
+// Função listener para verificar e adicionar o elemento de id 'errorToast' e fazer ele desaparecer.
+document.addEventListener('DOMContentLoaded', function () {
+    const errorAlert = document.getElementById('errorAlert');
+    errorAlert.style.opacity = 1;
+
+    let alertOpacity = parseFloat(errorAlert.style.opacity); 
+
+    function fadeAlert() {
+        alertOpacity -= 0.03; 
+        errorAlert.style.opacity = alertOpacity;
+
+        if (alertOpacity <= 0) {
+            errorAlert.style.display = 'none';
+        } else {
+            requestAnimationFrame(fadeAlert); 
+        }
+    }
+
+    setTimeout(fadeAlert, 2000);
+    
+});
+
 // Função que torna o password digitado visível por meio de uma troca de type (password -> text || text -> password), assim como o ícone. 
 // Levemente modificado, para alterar os respectivos campos segundo o uso: Senha e Confirme a Senha.
 function togglePasswordVisibility(inputId, iconId) {
@@ -234,15 +256,25 @@ function validateAge(input, errorMessageText) {
         return;
     }
 
-    if (age > 100) {
+    if (age < 18) {
+        input.classList.add('input-error');
+        span.classList.remove('hidden');
+        span.innerHTML = "A idade não pode ser inferior a 18 anos.";
+        return;
+    } 
+
+    if (age > 130) {
         input.classList.add('input-error');
         span.classList.remove('hidden');
         span.innerHTML = errorMessageText;
-    } else {
-        input.classList.add('input-accent');
-        span.classList.add('hidden');
-        span.innerHTML = "";
+        return;
     }
+
+    input.classList.add('input-accent');
+    span.classList.add('hidden');
+    span.innerHTML = "";
+    
+
 }
 
 // Função que verifica se o campo (Senha) e o (Confirmar Senha) tem os inputs equivalentes.

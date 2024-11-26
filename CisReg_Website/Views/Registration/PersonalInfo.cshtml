@@ -1,6 +1,7 @@
 ﻿
 @model CisReg_Website.Models.PersonalInfoModel
 @{
+
     ViewData["Title"] = "Register";
 }
 
@@ -25,6 +26,30 @@
         <input id="colorRange" type="range" min="0" max="100" value="100" class="w-full range range-xs" />
         <i id="sunIcon" class="fa-solid fa-sun fa-xl ml-2" style="color: #000000"></i>
     </div>
+
+    <!-- Error Alert -->
+    @{
+        if (ViewBag.ErrorMessage != null)
+
+
+
+        {
+            <div class="fixed z-20 top-0 mt-4 w-100-px h-auto">
+                <div id="errorAlert" role="alert" class="alert alert-error w-full mx-auto flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="h-6 w-6 shrink-0 stroke-current"
+                         fill="none"
+                         viewBox="0 0 24 24">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>@ViewBag.ErrorMessage</span>
+                </div>
+            </div>
+        }
+    }
 
     <!-- Formulário de Cadastro (Informações Pessoais) -->
     <div class="z-10 custom-sm:w-394-px custom-sm:h-auto w-360-px rounded-lg-border bg-customGrey-light shadow-login flex flex-col justify-center items-center custom-lg:mr-36">

@@ -4,8 +4,6 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/tailwind.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -16,7 +14,13 @@
 </head>
 
 <body>
-    @if (ViewContext.RouteData.Values["controller"]?.ToString() == "Login")
+    @{
+        var allowedControllers = new[] { "Login", "Registration", "ProfessionalInfo" };
+        var currentController = ViewContext.RouteData.Values["Controller"]?.ToString();
+        var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+    }
+    @if (allowedControllers.Contains(currentController) &&
+    (currentAction == "Index" || currentAction == "Submit"))
     {
         <div>
             @RenderBody()
@@ -24,6 +28,7 @@
     }
     else
     {
+
         <div class="flex flex-col md:flex-row">
             <div
                 class="bg-customGreen-dark w-full h-20 flex justify-end p-6 md:text-sm md:w-20 md:h-screen md:flex-col md:items-center md:justify-start">

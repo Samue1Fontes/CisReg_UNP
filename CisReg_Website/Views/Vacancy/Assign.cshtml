@@ -1,0 +1,53 @@
+@model CisReg_Website.Models.Vacancy.VacancyAssignShowViewModel
+
+@{
+  ViewData["Title"] = "Reserve um horário";
+}
+
+<div class="flex flex-col p-28 w-full gap-10">
+  <h1>Crie uma reserva</h1>
+
+  <h4>Reserva @Model.VacancyModel.AvailableHour</h4>
+  <hr />
+  <div class="row">
+    <div class="col-md-4">
+      <form asp-action="Assign" class="flex flex-col gap-8">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <label asp-for="PatientId" class="form-control w-full max-w-md">
+          <div class="label">
+            <span class="label-text">Paciente</span>
+          </div>
+
+          <select asp-for="PatientId" class="form-control select select-bordered p-2">
+            @foreach (var patient in Model.Patients)
+            {
+              <option value="@patient.Id">@patient.FirstName @patient.LastName</option>
+            }
+          </select>
+        </label>
+
+        <label asp-for="ProfessionalId" class="form-control w-full max-w-md">
+          <div class="label">
+            <span class="label-text">Profssional</span>
+          </div>
+
+          <select asp-for="ProfessionalId" class="form-control select select-bordered p-2">
+            @foreach (var professional in Model.Professionals)
+            {
+              <option value="@professional.Id">@professional.FirstName @professional.LastName</option>
+            }
+          </select>
+        </label>
+
+        <div class="form-group">
+          <input type="submit" value="Confirmar" class="btn btn-primary" />
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div>
+    <a asp-action="Index" class="btn btn-ghost">Voltar</a>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+<div class="bg-customGrey-light font-poppins">
+    <div class="bg-[#059C7B] p-4 w-screen text-white ">
+        <h2 class="font-bold text-2xl">SELECIONAR PROFISSIONAIS</h2>
+    </div>
+
+    <div class="p-4">
+        <p class="font-bold text-black"> <i class="fa-solid fa-location-dot"></i> Clínica Universidade Potiguar</p>
+    </div>
+
+    <div class="flex">
+        <div name="Container" class="flex flex-col w-[30%] p-4 gap-2">
+            <div name="date" class="w-full flex flex-col gap-2">
+                <div class="bg-[#059C7B] p-2 text-white rounded">
+                    <button class="w-full text-start "> <i class="fa-regular fa-calendar-minus"></i> Alterar Datas</button>
+                </div>
+                <div class="border-2 border-[#059C7B] rounded-lg">
+                    <p class="text-center text-[#059C7B]">Quinta feira, 19 de setembro</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="flex flex-col gap-2">
+                <div class="flex">
+                    <input type="radio" name="Period" value="Morning" id="Morning" class="peer hidden">
+                    <label for="Morning"
+                        class="w-full border border-customGreen-default cursor-pointer text-customGreen-default py-2 px-4 rounded-lg bg-white transition-colors peer-checked:text-white peer-checked:bg-[#059C7B]  peer-checked:border-customGreen-default">
+                        <i class="fa-solid fa-sun mr-4"></i>
+                        Manhã
+                    </label>
+                </div>
+                <div class="flex">
+                    <input type="radio" name="Period" value="Afternoon" id="Afternoon" class="peer hidden">
+                    <label for="Afternoon"
+                        class="w-full border border-customGreen-default cursor-pointer text-customGreen-default py-2 px-4 rounded-lg bg-white transition-colors peer-checked:text-white peer-checked:bg-customGreen-default peer-checked:border-customGreen-default">
+                        <i class="fa-regular fa-sun mr-4"></i>
+                        Tarde
+                    </label>
+                </div>
+                <div class="flex">
+                    <input type="radio" name="Period" value="Night" id="Night" class="peer hidden">
+                    <label for="Night"
+                        class="w-full border border-customGreen-default cursor-pointer text-customGreen-default py-2 px-4 rounded-lg bg-white transition-colors peer-checked:text-white peer-checked:bg-customGreen-default peer-checked:border-customGreen-default">
+                        <i class="fa-solid fa-moon mr-4"></i>
+                        Noite
+                    </label>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="flex">
+                        <input id="medico" type="checkbox" class="peer hidden" value="medico" name="Specialty">
+                        <label for="medico"
+                            class="border border-customGreen-default text-customGreen-default py-2 px-4 rounded-full bg-white transition-colors peer-checked:text-white peer-checked:bg-customGreen-default cursor-pointer">medico</label>
+                    </div>
+        </div>
+
+        <div name="Container" class="flex flex-col w-[70%] p-4 gap-2">
+            
+            <div class="w-full">
+                <div class="flex items-center">
+                <input type="text" placeholder="Buscar..." class="w-full px-4 py-2 text-gray-700 bg-gray-100 border-2 border-[#059C7B] rounded-l-md focus:outline-none"/>
+                <button type="button" class="px-4 py-2 text-white bg-[#059C7B] border-2 border-[#059C7B] rounded-r-md hover:bg-[#059C7B] focus:outline-none hover:"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+
+            <div class="card bg-customGreen-default w-96 shadow-xl text-white">
+                <figure><img src="~/lib/images/Unp-CIS.png" alt="CisUnp"/></figure>
+                <div class="card-body">
+                    <p> <b>Doutor: Silvio Bezerra</b></p>
+                    <div class="card-actions justify-start"></div>
+                    <div class="badge badge-outline">Fisioterapeuta</div>
+                    <div class="badge badge-outline">Cadastrado</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

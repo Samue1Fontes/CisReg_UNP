@@ -1,0 +1,75 @@
+@model CisReg_Website.Models.Professional
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Professional</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Academic" class="control-label"></label>
+                <input asp-for="Academic" class="form-control" />
+                <span asp-validation-for="Academic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Council" class="control-label"></label>
+                <input asp-for="Council" class="form-control" />
+                <span asp-validation-for="Council" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CouncilNumber" class="control-label"></label>
+                <input asp-for="CouncilNumber" class="form-control" />
+                <span asp-validation-for="CouncilNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Specialty" class="control-label"></label>
+                <input asp-for="Specialty" class="form-control" />
+                <span asp-validation-for="Specialty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Formation" class="control-label"></label>
+                <input asp-for="Formation" class="form-control" />
+                <span asp-validation-for="Formation" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Permission" class="control-label"></label>
+                <input asp-for="Permission" class="form-control" />
+                <span asp-validation-for="Permission" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
